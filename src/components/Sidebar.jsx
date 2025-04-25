@@ -3,8 +3,12 @@ import './Sidebar.css';
 
 const Sidebar = ({ setSelected, onItemClick }) => {
   const handleClick = (section) => {
-    setSelected(section);
-    if (onItemClick) onItemClick();
+    if (section === 'resume') {
+      window.open('/resume.pdf', '_self'); 
+    } else {
+      setSelected(section);
+      if (onItemClick) onItemClick();
+    }
   };
 
   return (
