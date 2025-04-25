@@ -7,6 +7,16 @@
     padding-left: 7%;
     flex-wrap: wrap;
   }
+  @media (min-width: 768px) {
+    .about-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 2rem;
+      flex-wrap: wrap;
+    }
+  }
   
   .about-image-wrapper {
     flex: 1;
