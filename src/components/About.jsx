@@ -1,13 +1,21 @@
+import './About.css';
+import profilePic from '../assets/praveen.png'; 
+
 const About = () => {
-    return (
-      <div className="content-wrapper">
+  return (
+    <div className="about-container">
+      <div className="about-text">
         <h1>About Me</h1>
         <p>
-          I’m Voruganti Praveen, a Java Full Stack Developer with 3+ years of experience in building scalable, responsive web applications using Java, Spring Boot, React.js, and more.
+          I’m <strong>Voruganti Praveen</strong>, a Java Full Stack Developer with 3+ years of experience in building scalable, responsive web applications using Java, Spring Boot, React.js, and more.
           I’m passionate about solving real-world problems through code and continuously improving my skills.
         </p>
       </div>
-    );
-  };
-  export default About;
-  
+      <div className="about-image-wrapper">
+        <img src={profilePic} alt="Voruganti Praveen" className="about-image" />
+      </div>
+    </div>
+  );
+};
+
+export default About;
