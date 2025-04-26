@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import About from './components/About';
 import Projects from './components/Projects';
+import Education from './components/Education';
+import Contact from './components/Contact';
 import './App.css';
 
 function App() {
@@ -12,6 +14,10 @@ function App() {
     switch (selected) {
       case 'about':
         return <About />;
+      case 'education':
+        return <Education />;
+      case 'contact':
+        return <Contact />;
       case 'projects':
         return <Projects />;
       default:

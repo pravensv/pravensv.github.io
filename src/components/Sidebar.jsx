@@ -17,6 +17,8 @@ const Sidebar = ({ setSelected, onItemClick }) => {
       <button onClick={() => handleClick('about')} className="sidebar-btn">About</button>
       <button onClick={() => handleClick('resume')} className="sidebar-btn">Resume</button>
       <button onClick={() => handleClick('projects')} className="sidebar-btn">Projects</button>
+      <button onClick={() => handleClick('education')} className="sidebar-btn">Education</button>
+      <button onClick={() => handleClick('contact')} className="sidebar-btn">Contact</button>
     </div>
   );
 };

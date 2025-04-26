@@ -1,0 +1,59 @@
+.contact-container {
+    padding: 4rem 1rem;
+    background: linear-gradient(to right, #f7f9fc, #e5edf5);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .contact-title {
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #222;
+  }
+  
+  .contact-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  .contact-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .contact-item:hover {
+    transform: translateY(-8px);
+    background-color: #e0f0ff;
+  }
+  
+  .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Specific colors */
+  .whatsapp { color: #25D366; }
+  .phone { color: #007BFF; }
+  .email { color: #FF6B6B; }
+  .instagram { color: #E1306C; }
+  .linkedin { color: #0077B5; }
+  .youtube { color: #FF0000; }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 600px) {
+    .contact-items {
+      grid-template-columns: 1fr;
+    }
+  }
+  
