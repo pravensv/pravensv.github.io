@@ -1,4 +1,4 @@
-import './Projects.css';
+import styles from './Projects.module.scss';
 
 const projectData = [
   {
@@ -41,19 +41,19 @@ const projectData = [
 
 const Projects = () => {
   return (
-    <div className="projects-container">
+    <div className={styles['projects-container']}>
       <h1>Projects</h1>
-      <div className="projects-grid">
+      <div className={styles['projects-grid']}>
         {projectData.map((project, index) => (
-          <div key={index} className="project-card">
+          <div key={index} className={styles['project-card']}>
             <h2>{project.title}</h2>
             <p>{project.description}</p>
             <h3>Role & Responsibilities:</h3>
-            <p>
+            <div>
               {project.responsibilities.map((task, i) => (
                 <p key={i}>{task}</p>
               ))}
-            </p>
+            </div>
           </div>
         ))}
       </div>

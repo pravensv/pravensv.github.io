@@ -1,0 +1,60 @@
+.sidebar {
+    height: 100%;
+    /* background-color: #1e1e2f; */
+    background-color: #242424;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 15px;
+  }
+  
+  .sidebar-title {
+    margin-bottom: 30px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .sidebar-btn {
+    background: none;
+    border: none;
+    color: white;
+    padding: 12px 0;
+    text-align: left;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  
+  .sidebar-btn:hover {
+    background-color: #343456;
+    border-radius: 4px;
+    padding-left: 10px;
+  }
+  
+  .socialIcons {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem 0;
+  }
+  .socialIcons a {
+    color: white;
+    font-size: 1.8rem;
+    transition: color 0.3s;
+  }
+  
+  .socialIcons a:hover {
+    color: #007bff;
+  }
+  .sidebar {
+    height: 100%;
+    /* background-color: #1e1e2f; */
+    background-color: #242424;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 15px;
+  }

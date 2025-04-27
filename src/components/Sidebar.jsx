@@ -1,5 +1,5 @@
-import React from 'react';
-import './Sidebar.css';
+import styles from './Sidebar.module.scss';
+import { FaLinkedin, FaYoutube, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const Sidebar = ({ setSelected, onItemClick }) => {
   const handleClick = (section) => {
@@ -12,13 +12,28 @@ const Sidebar = ({ setSelected, onItemClick }) => {
   };
 
   return (
-    <div className="sidebar">
-      <h2 className="sidebar-title">My Portfolio</h2>
-      <button onClick={() => handleClick('about')} className="sidebar-btn">About</button>
-      <button onClick={() => handleClick('resume')} className="sidebar-btn">Resume</button>
-      <button onClick={() => handleClick('projects')} className="sidebar-btn">Projects</button>
-      <button onClick={() => handleClick('education')} className="sidebar-btn">Education</button>
-      <button onClick={() => handleClick('contact')} className="sidebar-btn">Contact</button>
+    <div className={styles.sidebar}>
+      <h2 className={styles['sidebar-title']}></h2>
+      <button onClick={() => handleClick('about')} className={styles['sidebar-btn']}>About</button>
+      <button onClick={() => handleClick('resume')} className={styles['sidebar-btn']}>Resume</button>
+      <button onClick={() => handleClick('projects')} className={styles['sidebar-btn']}>Projects</button>
+      <button onClick={() => handleClick('education')} className={styles['sidebar-btn']}>Education</button>
+      <button onClick={() => handleClick('contact')} className={styles['sidebar-btn']}>Contact</button>
+
+      <div className={styles.socialIcons}>
+        <a href="https://linkedin.com/in/praveen-voruganti-90b428181" target="_blank" rel="noopener noreferrer">
+          <FaLinkedin />
+        </a>
+        <a href="https://youtube.com/@praveen8779" target="_blank" rel="noopener noreferrer">
+          <FaYoutube />
+        </a>
+        <a href="https://github.com/pravensv" target="_blank" rel="noopener noreferrer">
+          <FaGithub />
+        </a>
+        <a href="mailto:praveenshetty.code@gmail.com">
+          <FaEnvelope />
+        </a>
+      </div>
     </div>
   );
 };

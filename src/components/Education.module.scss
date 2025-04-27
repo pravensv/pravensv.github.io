@@ -1,0 +1,130 @@
+.education-container {
+  padding: 2rem;
+  background-color: #242424;
+  min-height: 100vh;
+}
+
+.education-title {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+  color: #f4d3d3;
+}
+
+.education-graph {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.education-graph::before {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background: #00bfff;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.graph-node {
+  position: relative;
+  margin: 2rem 0;
+  text-align: center;
+  width: 250px;
+}
+
+.node-marker {
+  width: 20px;
+  height: 20px;
+  background-color: #00bfff;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+.node-content {
+  // background: white;
+  background: #4a4a4a;;
+  
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.node-content h2 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #0077cc;
+}
+
+.node-content h3 {
+  margin-top: 0.3rem;
+  font-size: 1rem;
+  color: #d6d2d2;
+}
+
+.node-content p {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #c6c3c3;
+}
+
+.graph-node:hover .node-content {
+  transform: scale(1.05);
+}
+
+/* Hover dialog box */
+.hover-dialog {
+  position: absolute;
+  top: -10px;
+  left: 270px;
+  width: 250px;
+  // background: #ffffff;
+  background: #4a4a4a;;
+  border: 2px solid #00bfff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  font-size: 0.95rem;
+  color: #dfdede;
+  z-index: 5;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile View */
+@media (max-width: 600px) {
+  .education-graph::before {
+    left: 20px;
+    transform: none;
+  }
+
+  .graph-node {
+    width: 90%;
+    margin-left: 40px;
+    text-align: left;
+  }
+
+  .hover-dialog {
+    left: 50px;
+    top: 100%;
+    margin-top: 10px;
+  }
+}

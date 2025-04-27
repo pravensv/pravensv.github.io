@@ -1,7 +1,9 @@
-import React from 'react';
-import './Education.css';
+import React, { useState } from 'react';
+import styles from './Education.module.scss';
 
 export default function Education() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
   const educationData = [
     {
       degree: "M.E - Embedded Systems and Computing",
@@ -30,20 +32,28 @@ export default function Education() {
   ];
 
   return (
-    <div className="education-container">
-      <h1 className="education-title">My Education Journey</h1>
-      <div className="education-timeline">
+    <div className={styles['education-container']}>
+      <h1 className={styles['education-title']}>My Education Journey</h1>
+      <div className={styles['education-graph']}>
         {educationData.map((edu, index) => (
-          <div key={index} className="timeline-step">
-            <div className="step-marker"></div>
-            <div className="step-content">
+          <div
+            key={index}
+            className={styles['graph-node']}
+            onMouseEnter={() => setHoveredIndex(index)}
+            onMouseLeave={() => setHoveredIndex(null)}
+          >
+            <div className={styles['node-marker']}></div>
+            <div className={styles['node-content']}>
               <h2>{edu.degree}</h2>
               <h3>{edu.institution}</h3>
               <p>{edu.year}</p>
-              <div className="hover-details">
+            </div>
+
+            {hoveredIndex === index && (
+              <div className={styles['hover-dialog']}>
                 {edu.details}
               </div>
-            </div>
+            )}
           </div>
         ))}
       </div>
