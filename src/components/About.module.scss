@@ -1,0 +1,51 @@
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 5% 7%;
+  flex-wrap: wrap;
+}
+
+.aboutImageWrapper {
+  flex: 1;
+  max-width: 320px;
+  border: 4px solid #007bff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.aboutImage {
+  width: 100%;
+  height: auto;
+}
+
+.aboutText {
+  flex: 2;
+  min-width: 300px;
+  max-width: 600px;
+  text-align: justify;
+
+  h1 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    color: #333;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContainer {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .aboutText {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .aboutImageWrapper {
+    max-width: 240px;
+  }
+}

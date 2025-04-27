@@ -1,10 +1,11 @@
+// Sidebar.jsx
 import React from 'react';
-import './Sidebar.css';
+import styles from './Sidebar.module.scss';
 
 const Sidebar = ({ setSelected, onItemClick }) => {
   const handleClick = (section) => {
     if (section === 'resume') {
-      window.open('/resume.pdf', '_self'); 
+      window.open('/resume.pdf', '_self');
     } else {
       setSelected(section);
       if (onItemClick) onItemClick();
@@ -12,13 +13,13 @@ const Sidebar = ({ setSelected, onItemClick }) => {
   };
 
   return (
-    <div className="sidebar">
-      <h2 className="sidebar-title">My Portfolio</h2>
-      <button onClick={() => handleClick('about')} className="sidebar-btn">About</button>
-      <button onClick={() => handleClick('resume')} className="sidebar-btn">Resume</button>
-      <button onClick={() => handleClick('projects')} className="sidebar-btn">Projects</button>
-      <button onClick={() => handleClick('education')} className="sidebar-btn">Education</button>
-      <button onClick={() => handleClick('contact')} className="sidebar-btn">Contact</button>
+    <div className={styles.sidebar}>
+      <h2 className={styles.sidebarTitle}>My Portfolio</h2>
+      <button onClick={() => handleClick('about')} className={styles.sidebarBtn}>About</button>
+      <button onClick={() => handleClick('resume')} className={styles.sidebarBtn}>Resume</button>
+      <button onClick={() => handleClick('projects')} className={styles.sidebarBtn}>Projects</button>
+      <button onClick={() => handleClick('education')} className={styles.sidebarBtn}>Education</button>
+      <button onClick={() => handleClick('contact')} className={styles.sidebarBtn}>Contact</button>
     </div>
   );
 };

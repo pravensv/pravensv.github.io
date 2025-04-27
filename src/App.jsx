@@ -4,7 +4,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
-import './App.css';
+import styles from './App.module.scss';
 
 function App() {
   const [selected, setSelected] = useState('about');
@@ -26,16 +26,16 @@ function App() {
   };
 
   return (
-    <div className="app-container">
-      <div className={`sidebar-container ${sidebarOpen ? 'open' : 'closed'}`}>
+    <div className={styles.appContainer}>
+      <div className={`${styles.sidebarContainer} ${sidebarOpen ? styles.open : styles.closed}`}>
         <Sidebar setSelected={setSelected} onItemClick={() => setSidebarOpen(false)} />
       </div>
 
-      <div className="main-content">
-        <button className="toggle-btn" onClick={() => setSidebarOpen(!sidebarOpen)}>
+      <div className={styles.mainContent}>
+        <button className={styles.toggleBtn} onClick={() => setSidebarOpen(!sidebarOpen)}>
           {sidebarOpen ? '←' : '☰'}
         </button>
-        <div className="content-wrapper">
+        <div className={styles.contentWrapper}>
           {renderComponent()}
         </div>
       </div>
