@@ -1,0 +1,148 @@
+.treeContainer {
+  position: relative;
+  margin: 3rem auto;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+}
+
+// Node styles
+.treeNode {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  .nodeCircle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: #0077ff;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    box-shadow: 0 0 10px rgba(0, 119, 255, 0.5);
+  }
+
+  .connector {
+    position: absolute;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0077ff, #00cfff);
+    left: 50%;
+    top: 20px;
+    transform: translateX(-50%);
+    z-index: 1;
+  }
+
+  .nodeContent {
+    background: #f0f8ff;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    width: 45%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.4rem;
+      color: #0077ff;
+    }
+
+    h4 {
+      margin: 0.3rem 0;
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    span {
+      font-size: 0.95rem;
+      color: #555;
+      font-weight: 500;
+    }
+
+    p {
+      margin-top: 0.5rem;
+      font-size: 1rem;
+      color: #444;
+      line-height: 1.5;
+    }
+  }
+}
+
+// Alternate left/right positioning
+.left .nodeContent {
+  margin-right: auto;
+  text-align: right;
+}
+
+.right .nodeContent {
+  margin-left: auto;
+  text-align: left;
+}
+
+// Responsive for mobile
+@media (max-width: 768px) {
+  .treeNode {
+    flex-direction: column;
+    align-items: center;
+
+    .nodeContent {
+      width: 90%;
+      text-align: center !important;
+    }
+
+    // Hide the connector line in mobile
+    .connector {
+      display: none;
+    }
+
+    .nodeCircle {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #0077ff;
+}
+.logo {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #ffffff20;
+  padding: 8px;
+  backdrop-filter: blur(4px);
+}
+
+.nodeContent {
+  background: #101010;
+  color: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  width: 300px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.year {
+  display: inline-block;
+  margin-top: 6px;
+  font-weight: bold;
+  color: #00d4ff;
+}

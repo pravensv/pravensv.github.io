@@ -1,0 +1,72 @@
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #0077ff;
+}
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.projectCard {
+  background: #f0f8ff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  h3 {
+    font-size: 1.4rem;
+    color: #0077ff;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #444;
+    flex-grow: 1;
+    margin-bottom: 1rem;
+  }
+
+  .viewMore {
+    text-decoration: none;
+    color: #fff;
+    background-color: #0077ff;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    transition: background 0.3s ease;
+
+    &:hover {
+      background-color: #005fcc;
+    }
+  }
+}
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectsGrid {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+}

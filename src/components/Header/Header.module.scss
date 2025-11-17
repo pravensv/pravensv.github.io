@@ -1,0 +1,128 @@
+/* Header Wrapper */
+.header {
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #0d1117;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #58a6ff;
+
+  span {
+    color: #fff;
+  }
+}
+
+/* Desktop Navigation */
+.navDesktop {
+  display: flex;
+  gap: 2rem;
+
+  a {
+    color: #c9d1d9;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: 0.3s;
+
+    &:hover {
+      color: #58a6ff;
+    }
+  }
+}
+
+/* Highlight Active Link */
+.active {
+  color: #58a6ff;
+  border-bottom: 2px solid #58a6ff;
+  padding-bottom: 6px;
+}
+
+/* Hamburger Menu Icon */
+.menuIcon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+
+  span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    transition: 0.4s;
+    border-radius: 5px;
+  }
+}
+
+/* Transform bars when open */
+.barOpen:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+.barOpen:nth-child(2) {
+  opacity: 0;
+}
+.barOpen:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu Drawer */
+.mobileMenu {
+  position: fixed;
+  top: 65px;
+  left: 0;
+  width: 100%;
+  background: #161b22;
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  transform: translateY(-300px);
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s ease;
+  border-bottom: 1px solid #1f2937;
+}
+
+/* Show when open */
+.showMenu {
+  transform: translateY(0px);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile menu link style */
+.mobileMenu a {
+  color: #c9d1d9;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: 0.3s;
+
+  &:hover {
+    color: #58a6ff;
+  }
+}
+
+/* Mobile View Logic */
+@media (max-width: 768px) {
+  .navDesktop {
+    display: none;
+  }
+
+  .menuIcon {
+    display: flex;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+}

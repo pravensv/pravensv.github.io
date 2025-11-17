@@ -1,0 +1,27 @@
+{
+  "brand": "Praveen Voruganti",
+  "description": "Passionate Full-Stack Developer creating modern, scalable, user-focused web applications.",
+  "socialLinks": [
+    {
+      "platform": "GitHub",
+      "icon": "/icons/github.png",
+      "link": "https://github.com/pravensv"
+    },
+    {
+      "platform": "LinkedIn",
+      "icon": "/icons/linkedin.png",
+      "link": "https://www.linkedin.com/in/praveen-voruganti-90b428181/"
+    },
+    {
+      "platform": "Instagram",
+      "icon": "/icons/instagram.png",
+      "link": "https://www.instagram.com/nameisrajuu"
+    },
+    {
+      "platform": "Gmail",
+      "icon": "/icons/gmail.png",
+      "link": "mailto:praveenshetty.code@gmail.com"
+    }
+  ],
+  "copyright": "© 2025 Praveen Voruganti. All rights reserved."
+}

@@ -1,0 +1,85 @@
+[
+  {
+    "title": "Cisco Reimagined",
+    "description": "An internal web platform designed to modernize Cisco’s customer interaction workflows using the Khoros suite. Improved operational efficiency, UI experience, and cross-team collaboration.",
+    "icon": "/icons/cisco.png",
+    "responsibilities": [
+      "Developed responsive UI screens using JavaScript, jQuery, SCSS, and Freemarker templates.",
+      "Improved platform performance by optimizing API calls and caching heavy workflows.",
+      "Integrated REST APIs with secure authentication and session management.",
+      "Collaborated with cross-functional teams including designers, backend developers, and QA.",
+      "Implemented reusable UI components that reduced development time by 20%.",
+      "Maintained Git workflow and automated Jenkins pipelines for smooth deployments.",
+      "Worked on debugging, production support, and customer requirement enhancements."
+    ]
+  },
+  {
+    "title": "Cisco Techzone",
+    "description": "A knowledge-sharing and content-publishing platform for Cisco engineers and product teams. The platform enables employees to upload, edit, and publish technical content securely.",
+    "icon": "/icons/cisco-techzone.png",
+    "responsibilities": [
+      "Developed new features using Java, Spring Boot, React.js, and MySQL.",
+      "Built dynamic pages with React components and optimized rendering performance.",
+      "Created shell scripts for automated deployment and environment setup.",
+      "Integrated secure access control using RBAC and Cisco-internal authentication.",
+      "Built custom dashboards for analytics and content insights.",
+      "Improved search performance with database indexing and query optimization.",
+      "Implemented CI/CD automation using Jenkins for multi-environment deployment.",
+      "Collaborated directly with Cisco content teams to refine workflows and UI experiences."
+    ]
+  },
+  {
+    "title": "AutoDesk User Automation",
+    "description": "A backend automation project for managing user cleanup, permission removal, and access revocation to maintain system security and reduce manual administrative effort.",
+    "icon": "/icons/autodesk.png",
+    "responsibilities": [
+      "Developed automated cleanup scripts using Java and shell scripting.",
+      "Implemented RBAC logic to manage user permissions and restrict unauthorized access.",
+      "Developed scheduled background jobs for daily, weekly, and monthly user audits.",
+      "Integrated monitoring logs with ELK to track execution and detect failures.",
+      "Automated email notifications for completed actions and exceptions.",
+      "Enhanced the reliability of the automation by adding retry mechanisms and error handling.",
+      "Participated in security reviews and improved the audit compliance process."
+    ]
+  },
+  {
+    "title": "Khoros to Aurora Migration",
+    "description": "Major migration project involving database transition from MySQL to Amazon Aurora, along with complete frontend modernization using React and GraphQL.",
+    "icon": "/icons/aurora.png",
+    "responsibilities": [
+      "Designed and developed GraphQL schemas, resolvers, and backend connectors.",
+      "Migrated large-scale datasets from MySQL to Aurora with zero downtime.",
+      "Implemented ETL scripts and automated data validation workflows.",
+      "Optimized database queries, reducing API response time by 40%.",
+      "Rebuilt entire frontend using React.js with modular components and reusable hooks.",
+      "Integrated AWS services (Lambda, RDS, CloudWatch) for scalable deployment.",
+      "Performed regression testing, performance testing, and production rollout.",
+      "Collaborated closely with DevOps teams to streamline deployments and CI/CD automation."
+    ]
+  },
+  {
+    "title": "Internal Developer Portal",
+    "description": "A centralized portal designed for internal teams to manage builds, deployments, logs, and microservice health checks seamlessly.",
+    "icon": "/icons/devportal.png",
+    "responsibilities": [
+      "Developed microservice dashboards and live monitoring screens.",
+      "Integrated CI/CD metrics and build logs into React UI using REST and WebSockets.",
+      "Added role-based access for developers, managers, and administrators.",
+      "Created dark/light theme UI and improved overall UX using design patterns.",
+      "Reduced manual DevOps dependency by automating triggers and deployment actions.",
+      "Implemented advanced filtering, search, and analytics charts."
+    ]
+  },
+  {
+    "title": "API Performance Optimization Suite",
+    "description": "A toolkit for analyzing, profiling, and optimizing slow APIs across multiple microservices for better backend performance.",
+    "icon": "/icons/performance.png",
+    "responsibilities": [
+      "Analyzed API bottlenecks using profiling tools and SQL explain plans.",
+      "Implemented caching layers using Redis and in-memory optimizations.",
+      "Reduced API latency from 700ms to under 200ms through query refactoring.",
+      "Built dashboards to display real-time API metrics and SLA breaches.",
+      "Improved failover handling and circuit breaker configurations using resilience patterns."
+    ]
+  }
+]

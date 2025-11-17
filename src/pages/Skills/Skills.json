@@ -1,0 +1,80 @@
+{
+  "categories": [
+    {
+      "name": "Frontend",
+      "skills": [
+        { "name": "JavaScript", "icon": "/icons/javascript.png" },
+        { "name": "TypeScript", "icon": "/icons/typescript.png" },
+        { "name": "React JS", "icon": "/icons/react.png" },
+        { "name": "Redux", "icon": "/icons/redux.png" },
+        { "name": "HTML", "icon": "/icons/html.png" },
+        { "name": "CSS", "icon": "/icons/css.png" },
+        { "name": "SCSS", "icon": "/icons/scss.png" },
+        { "name": "jQuery", "icon": "/icons/jquery.png" },
+        { "name": "Freemaker", "icon": "/icons/freemarker.png" }
+      ]
+    },
+    {
+      "name": "Backend",
+      "skills": [
+        { "name": "Java", "icon": "/icons/java.png" },
+        { "name": "Spring Boot", "icon": "/icons/spring.png" },
+        { "name": "Hibernate", "icon": "/icons/hibernate.png" },
+        { "name": "JPA", "icon": "/icons/jpa.png" },
+        { "name": "REST API", "icon": "/icons/restapi.png" },
+        { "name": "GraphQL API", "icon": "/icons/graphql.png" },
+        { "name": "PHP", "icon": "/icons/php.png" }
+      ]
+    },
+    {
+      "name": "Database",
+      "skills": [
+        { "name": "SQL", "icon": "/icons/sql.png" },
+        { "name": "MySQL", "icon": "/icons/mysql.png" },
+        { "name": "Oracle", "icon": "/icons/oracle.png" }
+      ]
+    },
+    {
+      "name": "Cloud",
+      "skills": [
+        { "name": "AWS", "icon": "/icons/aws.png" },
+        { "name": "GCP", "icon": "/icons/gcp.png" }
+      ]
+    },
+    {
+      "name": "Tools",
+      "skills": [
+        { "name": "VS Code", "icon": "/icons/vscode.png" },
+        { "name": "IntelliJ", "icon": "/icons/intellij.png" },
+        { "name": "Eclipse", "icon": "/icons/eclipse.png" },
+        { "name": "Postman", "icon": "/icons/postman.png" },
+        { "name": "Bruno", "icon": "/icons/bruno.png" }
+      ]
+    },
+    {
+      "name": "DevOps",
+      "skills": [
+        { "name": "Jenkins", "icon": "/icons/jenkins.png" },
+        { "name": "CI/CD", "icon": "/icons/cicd.png" },
+        { "name": "Automation", "icon": "/icons/automation.png" }
+      ]
+    },
+    {
+      "name": "Testing",
+      "skills": [
+        { "name": "Cypress", "icon": "/icons/cypress.png" },
+        { "name": "Jest", "icon": "/icons/jest.png" },
+        { "name": "JUnit", "icon": "/icons/junit.png" }
+      ]
+    },
+    {
+      "name": "Architecture & Methodologies",
+      "skills": [
+        { "name": "SDLC", "icon": "/icons/sdlc.png" },
+        { "name": "Waterfall", "icon": "/icons/waterfall.png" },
+        { "name": "Agile", "icon": "/icons/agile.png" },
+        { "name": "Microservices", "icon": "/icons/microservices.png" }
+      ]
+    }
+  ]
+}

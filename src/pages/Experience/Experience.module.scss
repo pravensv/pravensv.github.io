@@ -1,0 +1,119 @@
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #0077ff;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.progressLine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: linear-gradient(to bottom, #0077ff, #00cfff);
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.timelineCard {
+  position: relative;
+  width: 45%;
+  background: #e6f2ff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin: 2rem 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 2;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+  }
+
+  .iconWrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    left: -80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+    }
+  }
+
+  h3 {
+    font-size: 1.4rem;
+    color: #0077ff;
+    margin-bottom: 0.3rem;
+  }
+
+  h4 {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.3rem;
+  }
+
+  span {
+    font-size: 0.95rem;
+    color: #555;
+    font-weight: 500;
+  }
+
+  ul {
+    margin-top: 0.5rem;
+    padding-left: 1.2rem;
+
+    li {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+    }
+  }
+}
+
+/* Alternate cards left/right */
+.timelineCard:nth-child(even) {
+  margin-left: auto;
+
+  .iconWrapper {
+    left: auto;
+    right: -80px;
+  }
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .timelineCard {
+    width: 90%;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    .iconWrapper {
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .progressLine {
+    display: none;
+  }
+}

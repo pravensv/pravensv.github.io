@@ -1,0 +1,48 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Reset default margins/paddings and prevent overflow */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+.mobileMenu {
+  width: 100vw; /* safer: use width: 100% instead of 100vw */
+}
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+.container {
+  width: 100%;
+  max-width: 100%;
+}
+.mobileMenu {
+  width: 100vw; /* safer: use width: 100% instead of 100vw */
+}
+html, body, #root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+img, .sectionWrapper, .projectCard, .socialCard {
+  max-width: 100%;
+}

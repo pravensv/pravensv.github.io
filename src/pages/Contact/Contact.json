@@ -1,0 +1,22 @@
+[
+  {
+    "platform": "Gmail",
+    "icon": "/icons/gmail.png",
+    "link": "mailto:praveenshetty.code@gmail.com"
+  },
+  {
+    "platform": "Instagram",
+    "icon": "/icons/instagram.png",
+    "link": "https://www.instagram.com/nameisrajuu"
+  },
+  {
+    "platform": "LinkedIn",
+    "icon": "/icons/linkedin.png",
+    "link": "https://www.linkedin.com/in/praveen-voruganti-90b428181/"
+  },
+  {
+    "platform": "GitHub",
+    "icon": "/icons/github.png",
+    "link": "https://github.com/pravensv"
+  }
+]

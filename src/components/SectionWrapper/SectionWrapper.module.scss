@@ -1,0 +1,28 @@
+.sectionWrapper {
+  // padding: 80px 20px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+
+  /* Soft gradient separator between each section */
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(0, 0, 0, 0.2),
+      transparent
+    );
+  }
+}
+
+.inner {
+  max-width: 1200px;
+  margin: auto;
+}

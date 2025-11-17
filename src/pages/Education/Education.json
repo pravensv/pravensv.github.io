@@ -1,0 +1,30 @@
+[
+  {
+    "degree": "M.E - Embedded Systems and Computing",
+    "institution": "University College of Engineering, Osmania University",
+    "year": "2021",
+    "details": "Scored 78% till now. Learned Embedded Systems, IoT, PCB Design, Advanced Computing, Microcontrollers, and participated in research-oriented mini-projects.",
+    "logo": "/icons/ou.png"
+  },
+  {
+    "degree": "B.Tech - Computer Science and Engineering",
+    "institution": "Sree Dattha Group of Institutions",
+    "year": "2019",
+    "details": "Graduated with strong fundamentals in Programming, OS, DBMS, CN, Java, and Full-Stack projects. Worked on real-time mini projects and coding competitions.",
+    "logo": "/icons/jntuh.png"
+  },
+  {
+    "degree": "Intermediate - MPC",
+    "institution": "Geethanjali Junior College, Nalgonda",
+    "year": "2015",
+    "details": "Secured 85.5% with Mathematics, Physics, and Chemistry. Built strong analytical and problem-solving foundation.",
+    "logo": "/icons/Intermeidtae.png"
+  },
+  {
+    "degree": "SSC - High School",
+    "institution": "Z.P.H.S Nemmani",
+    "year": "2013",
+    "details": "Completed SSC with 6.7 GPA. Developed basic science and mathematical foundation.",
+    "logo": "/icons/Intermeidtae.png"
+  }
+]
