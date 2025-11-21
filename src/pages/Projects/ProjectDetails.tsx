@@ -2,10 +2,15 @@ import { useParams, useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import projectsData from "./Projects.json";
 import styles from "./ProjectDetails.module.scss";
+import { useEffect } from "react";
 
 export default function ProjectDetails() {
   const { projectId } = useParams<{ projectId: string }>();
   const navigate = useNavigate();
+   // Scroll to top on page load
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   // Find project by ID (converted to lowercase hyphen format)
   const project = projectsData.find(
@@ -21,15 +26,9 @@ export default function ProjectDetails() {
         <meta name="description" content={project.description} />
       </Helmet>
 
-      <button className={styles.backBtn} onClick={() => navigate(-1)}>
-        ← Back
-      </button>
-
-      <div className={styles.projectImage}>
-        <img src={project.icon} alt={project.title} />
-      </div>
-
+      
       <h1>{project.title}</h1>
+     
       <p className={styles.description}>{project.description}</p>
 
       <h3>Responsibilities:</h3>
@@ -38,6 +37,12 @@ export default function ProjectDetails() {
           <li key={index}>{resp}</li>
         ))}
       </ul>
+       <div className={styles.projectImage}>
+        <img src={project.icon} alt={project.title} />
+      </div>
+      <button className={styles.backBtn} onClick={() => navigate(-1)}>
+        ← Back
+      </button>
     </div>
   );
 }
