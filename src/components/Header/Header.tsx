@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import type { RefObject } from "react";
 import styles from "./Header.module.scss";
 
@@ -18,12 +19,27 @@ type HeaderProps = {
 
 export default function Header({ scrollToSection, refs }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleToggle = () => {
     setMenuOpen(!menuOpen);
   };
 
   const closeMenu = () => setMenuOpen(false);
+
+  const handleNavClick = (ref: RefObject<HTMLElement | null>) => {
+    closeMenu();
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for navigation to complete and component to mount
+      setTimeout(() => {
+        scrollToSection(ref);
+      }, 100);
+    } else {
+      scrollToSection(ref);
+    }
+  };
 
   return (
     <header className={styles.header}>
@@ -33,12 +49,12 @@ export default function Header({ scrollToSection, refs }: HeaderProps) {
 
       {/* Desktop Navigation */}
       <nav className={styles.navDesktop}>
-        <span onClick={() => { scrollToSection(refs.homeRef); closeMenu(); }}>Home</span>
-        <span onClick={() => { scrollToSection(refs.educationRef); closeMenu(); }}>Education</span>
-        <span onClick={() => { scrollToSection(refs.experienceRef); closeMenu(); }}>Experience</span>
-        <span onClick={() => { scrollToSection(refs.projectsRef); closeMenu(); }}>Projects</span>
-        <span onClick={() => { scrollToSection(refs.skillsRef); closeMenu(); }}>Skills</span>
-        <span onClick={() => { scrollToSection(refs.contactRef); closeMenu(); }}>Contact</span>
+        <span onClick={() => handleNavClick(refs.homeRef)}>Home</span>
+        <span onClick={() => handleNavClick(refs.educationRef)}>Education</span>
+        <span onClick={() => handleNavClick(refs.experienceRef)}>Experience</span>
+        <span onClick={() => handleNavClick(refs.projectsRef)}>Projects</span>
+        <span onClick={() => handleNavClick(refs.skillsRef)}>Skills</span>
+        <span onClick={() => handleNavClick(refs.contactRef)}>Contact</span>
       </nav>
 
       {/* Mobile Hamburger Button */}
@@ -50,12 +66,12 @@ export default function Header({ scrollToSection, refs }: HeaderProps) {
 
       {/* Mobile Menu */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""}`}>
-        <span onClick={() => { scrollToSection(refs.homeRef); closeMenu(); }}>Home</span>
-        <span onClick={() => { scrollToSection(refs.educationRef); closeMenu(); }}>Education</span>
-        <span onClick={() => { scrollToSection(refs.experienceRef); closeMenu(); }}>Experience</span>
-        <span onClick={() => { scrollToSection(refs.projectsRef); closeMenu(); }}>Projects</span>
-        <span onClick={() => { scrollToSection(refs.skillsRef); closeMenu(); }}>Skills</span>
-        <span onClick={() => { scrollToSection(refs.contactRef); closeMenu(); }}>Contact</span>
+        <span onClick={() => handleNavClick(refs.homeRef)}>Home</span>
+        <span onClick={() => handleNavClick(refs.educationRef)}>Education</span>
+        <span onClick={() => handleNavClick(refs.experienceRef)}>Experience</span>
+        <span onClick={() => handleNavClick(refs.projectsRef)}>Projects</span>
+        <span onClick={() => handleNavClick(refs.skillsRef)}>Skills</span>
+        <span onClick={() => handleNavClick(refs.contactRef)}>Contact</span>
       </div>
     </header>
   );
