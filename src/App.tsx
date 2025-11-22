@@ -12,6 +12,8 @@ import Contact from "./pages/Contact/Contact";
 import Skills from "./pages/Skills/Skills";
 // import SectionWrapper from "/components/SectionWrapper/SectionWrapper";
 import SectionWrapper from "./components/SectionWrapper/SectionWrapper";
+import Background from "./components/Background/Background";
+
 function App() {
   const homeRef = useRef(null);
   const educationRef = useRef(null);
@@ -33,6 +35,7 @@ function App() {
 
   return (
     <>
+      <Background />
       <Header
         scrollToSection={scrollToSection}
         refs={{
@@ -50,7 +53,7 @@ function App() {
           path="/"
           element={
             <>
-            
+
               <SectionWrapper>
                 <div ref={homeRef}><Home /></div>
               </SectionWrapper>
