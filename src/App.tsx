@@ -75,7 +75,7 @@ function App() {
               </SectionWrapper>
 
               <SectionWrapper>
-                <div ref={contactRef}><Contact /></div>
+                <div ref={contactRef} id="contact-section"><Contact /></div>
               </SectionWrapper>
             </>
           }
