@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import SEO from "../../components/SEO/SEO";
 import projectsData from "./Projects.json";
 import styles from "./ProjectDetails.module.scss";
 import { useEffect } from "react";
@@ -7,7 +7,7 @@ import { useEffect } from "react";
 export default function ProjectDetails() {
   const { projectId } = useParams<{ projectId: string }>();
   const navigate = useNavigate();
-   // Scroll to top on page load
+  // Scroll to top on page load
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
@@ -21,14 +21,17 @@ export default function ProjectDetails() {
 
   return (
     <div className={styles.container}>
-      <Helmet>
-        <title>{project.title} | Praveen Voruganti</title>
-        <meta name="description" content={project.description} />
-      </Helmet>
+      <SEO
+        title={`${project.title} | Praveen Voruganti`}
+        description={project.description}
+        image={project.icon}
+        url={`https://pravensv.github.io/projects/${projectId}`}
+        type="article"
+      />
 
-      
+
       <h1>{project.title}</h1>
-     
+
       <p className={styles.description}>{project.description}</p>
 
       <h3>Responsibilities:</h3>
@@ -37,7 +40,7 @@ export default function ProjectDetails() {
           <li key={index}>{resp}</li>
         ))}
       </ul>
-       <div className={styles.projectImage}>
+      <div className={styles.projectImage}>
         <img src={project.icon} alt={project.title} />
       </div>
       <button className={styles.backBtn} onClick={() => navigate(-1)}>
