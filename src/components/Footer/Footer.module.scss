@@ -1,119 +1,124 @@
 .footer {
   width: 100%;
   margin-top: 6rem;
-  padding: 3.5rem 1.5rem;
-  background: linear-gradient(180deg, #0a0f14, #0d1117);
-  color: #e5e5e5;
+  padding: 3rem 1.5rem 2rem 1.5rem;
+  background: rgba(18, 24, 38, 0.93);
+  color: #e6eefc;
   font-family: "Inter", "Segoe UI", sans-serif;
   text-align: center;
-  backdrop-filter: blur(6px);
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-
-  .content {
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-
-  /* Brand Title + Description */
-  .brandBox {
-    margin-bottom: 2.2rem;
-
-    h2 {
-      font-size: 2rem;
-      font-weight: 600;
-      background: linear-gradient(90deg, #4fc3f7, #58a6ff);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin-bottom: 0.5rem;
-    }
-
-    p {
-      font-size: 1.05rem;
-      max-width: 650px;
-      margin: 0 auto;
-      color: #bfc7d5;
-      line-height: 1.7rem;
-    }
-  }
-
-  /* Social Icons */
-  .socialBox {
-    display: flex;
-    justify-content: center;
-    gap: 1.4rem;
-    margin: 2rem 0;
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 54px;
-      height: 54px;
-      border-radius: 14px;
-      background: rgba(255, 255, 255, 0.03);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.35s ease;
-
-      &:hover {
-        background: rgba(88, 166, 255, 0.2);
-        box-shadow: 0 6px 18px rgba(88, 166, 255, 0.35);
-        transform: translateY(-6px) scale(1.07);
-      }
-
-      img {
-        width: 28px;
-        height: 28px;
-        filter: brightness(0.92);
-        transition: 0.3s;
-      }
-    }
-  }
-
-  /* Copyright Section */
-  .copy {
-    margin-top: 2.8rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
-
-    p {
-      font-size: 0.88rem;
-      letter-spacing: 0.3px;
-      color: #9099a7;
-    }
-  }
+  border-top: 1px solid rgba(72, 99, 255, 0.10);
+  box-shadow: 0 -6px 40px rgba(72, 99, 255, 0.12);
+  backdrop-filter: blur(8px);
+  position: relative;
+  overflow: hidden;
 }
-
-/* Mobile View */
+.footer::before {
+  content: "";
+  position: absolute;
+  left: -30vw;
+  bottom: -6vw;
+  width: 60vw;
+  height: 30vw;
+  background: radial-gradient(circle, #48a9fa22 60%, transparent 80%);
+  z-index: 1;
+}
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.brandBox {
+  margin-bottom: 2rem;
+}
+.brandBox h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, #7ef9ce 20%, #4fc3f7 50%, #9da6ff 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0.6rem;
+  animation: gradient-move 3s ease-in-out infinite alternate;
+}
+@keyframes gradient-move {
+  100% { background-position-x: 80px; }
+}
+.brandBox p {
+  font-size: 1.15rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #bccfec;
+  letter-spacing: 0.1px;
+  line-height: 1.75rem;
+}
+.socialBox {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 2.5rem 0;
+}
+.socialBox a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.07);
+  box-shadow: 0 2px 10px rgba(72,99,255,0.12);
+  backdrop-filter: blur(9px);
+  border: 1.5px solid rgba(72, 99, 255, 0.11);
+  transition: 0.3s;
+  scale: 1;
+  cursor: pointer;
+}
+.socialBox a:hover {
+  background: rgba(126, 249, 206, 0.24);
+  box-shadow: 0 8px 32px rgba(72, 99, 255, 0.28);
+  transform: translateY(-7px) scale(1.09);
+}
+.socialBox img {
+  width: 30px;
+  height: 30px;
+  filter: drop-shadow(0 0 2px #7ef9ce70);
+  transition: 0.3s;
+}
+.copy {
+  margin-top: 2.3rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(126, 249, 206, 0.16);
+}
+.copy p {
+  font-size: 0.92rem;
+  color: #6fa1f2;
+  letter-spacing: 0.6px;
+  opacity: 0.90;
+}
 @media (max-width: 768px) {
   .footer {
-    padding: 2.8rem 1rem;
-    margin-top: 4rem;
-
-    .brandBox h2 {
-      font-size: 1.6rem;
-    }
-
-    .brandBox p {
-      font-size: 0.95rem;
-    }
-
-    .socialBox {
-      gap: 1rem;
-
-      a {
-        width: 48px;
-        height: 48px;
-
-        img {
-          width: 22px;
-          height: 22px;
-        }
-      }
-    }
-
-    .copy p {
-      font-size: 0.75rem;
-    }
+    padding: 2.1rem 0.5rem 1rem 0.5rem;
+    margin-top: 2.3rem;
+  }
+  .brandBox h2 {
+    font-size: 1.55rem;
+  }
+  .brandBox p {
+    font-size: 0.94rem;
+  }
+  .socialBox {
+    gap: 1.2rem;
+  }
+  .socialBox a {
+    width: 44px;
+    height: 44px;
+  }
+  .socialBox img {
+    width: 20px;
+    height: 20px;
+  }
+  .copy p {
+    font-size: 0.75rem;
   }
 }

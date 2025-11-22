@@ -36,7 +36,7 @@ export default function Contact() {
   return (
     <div className={styles.container}>
       <Helmet>
-        <title>Contact Me | Praveen Voruganti</title>
+        <title>Praveen Voruganti</title>
         <meta name="description" content="Get in touch with Praveen Voruganti" />
       </Helmet>
 
