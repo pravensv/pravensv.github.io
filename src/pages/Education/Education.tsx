@@ -23,9 +23,8 @@ export default function Education() {
           return (
             <motion.div
               key={index}
-              className={`${styles.treeNode} ${
-                isLeft ? styles.left : styles.right
-              }`}
+              className={`${styles.treeNode} ${isLeft ? styles.left : styles.right
+                }`}
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -53,3 +52,4 @@ export default function Education() {
     </>
   );
 }
+
