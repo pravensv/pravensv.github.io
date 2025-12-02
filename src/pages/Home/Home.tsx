@@ -7,7 +7,7 @@ import SEO from '../../components/SEO/SEO';
 const Home: React.FC = () => {
     return (
         <>
-            <SEO title={homeData.title} description={homeData.description} />
+            <SEO title={homeData.title} description={homeData.description} keywords={homeData.keywords} />
             <div className={styles.container}>
                 <motion.div
                     className={styles.imageSection}
