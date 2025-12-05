@@ -31,7 +31,12 @@ const Home: React.FC = () => {
                     <p className={styles.description}>{homeData.description}</p>
 
                     <div className={styles.buttonContainer}>
-                        <button className={styles.resumeBtn}>Resume</button>
+                        <button
+                            className={styles.resumeBtn}
+                            onClick={() => window.open('/Praveen_2025_java_fullstack_developer.pdf', '_blank')}
+                        >
+                            Resume
+                        </button>
                         <button className={styles.hireBtn}>Hire Me</button>
                     </div>
                 </motion.div>
