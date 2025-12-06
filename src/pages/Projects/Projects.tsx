@@ -3,7 +3,7 @@ import styles from './Projects.module.scss';
 import projectsData from './Projects.json';
 import { motion } from 'framer-motion';
 import SEO from '../../components/SEO/SEO';
-
+import { Link } from "react-router-dom";
 const Projects: React.FC = () => {
     return (
         <>
@@ -28,7 +28,12 @@ const Projects: React.FC = () => {
                         <h3>{project.title}</h3>
                         <p>{project.description}</p>
 
-                        <a href="#" className={styles.viewMore}>View More</a>
+                        <Link
+                            to={`/projects/${project.title.replace(/\s+/g, "-").toLowerCase()}`}
+                            className={styles.viewMore}
+                        >
+                            View Details
+                        </Link>
 
                     </motion.div>
                 ))}
