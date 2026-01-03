@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet";
 
 export default function Education() {
   return (
-    <>
+    <div className={styles.container}>
       <Helmet>
         <title>Education | Praveen Voruganti</title>
         <meta
@@ -49,7 +49,7 @@ export default function Education() {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }
 

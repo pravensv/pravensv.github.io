@@ -12,12 +12,32 @@
       height: 120px;
       object-fit: contain;
       border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease;
 
       &:hover {
         transform: scale(1.05);
       }
+    }
+  }
+
+  .demoBtn {
+    display: table;
+    /* Centers the anchor tag when used with margin: 0 auto */
+    margin: 0 auto 2rem auto;
+    background: #0077ff;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 119, 255, 0.2);
+
+    &:hover {
+      background: #005fcc;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 119, 255, 0.3);
     }
   }
 

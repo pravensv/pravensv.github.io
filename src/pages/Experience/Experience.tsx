@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet';
 
 const Experience: React.FC = () => {
     return (
-        <>
+        <div className={styles.container}>
             <Helmet>
                 <title>Experience | Praveen Voruganti</title>
                 <meta name="description" content="Praveen's professional experience and career journey." />
@@ -44,7 +44,7 @@ const Experience: React.FC = () => {
                     </motion.div>
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 

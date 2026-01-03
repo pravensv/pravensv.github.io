@@ -28,7 +28,9 @@ export default function ProjectDetails() {
         url={`https://pravensv.github.io/projects/${projectId}`}
         type="article"
       />
-
+      <button className={styles.backBtn} onClick={() => navigate(-1)}>
+        ← Back
+      </button>
 
       <h1>{project.title}</h1>
 
@@ -43,9 +45,16 @@ export default function ProjectDetails() {
       <div className={styles.projectImage}>
         <img src={project.icon} alt={project.title} />
       </div>
-      <button className={styles.backBtn} onClick={() => navigate(-1)}>
-        ← Back
-      </button>
+      {project.demo_url && (
+        <a
+          href={project.demo_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.demoBtn}
+        >
+          View Demo
+        </a>
+      )}
     </div>
   );
 }

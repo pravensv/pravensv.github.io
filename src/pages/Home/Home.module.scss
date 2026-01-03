@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem 5rem;
+  padding: 3rem 2rem;
+  /* Reduced horizontal padding for more width */
   min-height: 100vh;
 
   @media (max-width: 768px) {
@@ -15,14 +16,18 @@
 .imageSection {
   flex: 1;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 
   img {
     width: 350px;
     height: 350px;
     object-fit: cover;
     border-radius: 50%;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
 
     @media (max-width: 768px) {
       width: 250px;
@@ -33,18 +38,22 @@
 }
 
 .textSection {
-  flex: 1;
-  padding-left: 3rem;
+  flex: 2;
+  /* Increased width relative to image */
+  padding-left: 1rem;
+  /* Removed glassmorphism background */
 
   @media (max-width: 768px) {
     padding-left: 0;
+    margin-top: 2rem;
   }
 }
 
 .name {
   font-size: 2.8rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+  color: #fff;
 
   span {
     color: #0077ff;
@@ -52,19 +61,51 @@
 }
 
 .role {
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: #555;
-  margin-bottom: 1rem;
+  font-size: 2rem;
+  /* Increased size */
+  font-weight: 700;
+  text-align: center;
+  /* Center the heading */
+  background: linear-gradient(90deg, #0077ff, #00cfff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
 }
 
-/* TYPING EFFECT FOR LONG DESCRIPTION */
-.description {
-  max-width: 600px;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #444;
-  white-space: pre-wrap;
+/* TYPING EFFECT WRAPPER */
+.descriptionWrapper {
+  height: 350px;
+  overflow-y: auto;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+  /* Add side padding for cleaner look */
+}
+
+.descriptionLine {
+  font-size: 1.25rem;
+  /* Slightly larger for premium feel */
+  line-height: 1.8;
+  color: #e0e0e0;
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+  /* Space for the bullet */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.3px;
+
+  &::before {
+    content: "➢";
+    /* Stylish arrow */
+    position: absolute;
+    left: 0;
+    color: #0077ff;
+    font-size: 1.2rem;
+    top: 0;
+  }
 }
 
 .cursor {
@@ -76,40 +117,63 @@
 }
 
 @keyframes blink {
-  50% { background-color: transparent; }
+  50% {
+    background-color: transparent;
+  }
 }
+
 .buttonContainer {
   display: flex;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 1.5rem;
+  /* Adjusted margin */
 }
 
-.resumeBtn,
-.hireBtn {
-  padding: 12px 22px;
+/* Updated Resume Button Style */
+.resumeBtn {
+  padding: 14px 32px;
   border: none;
   outline: none;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
   cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-/* Resume Button Style */
-.resumeBtn {
-  background-color: #0d6efd;
+  /* Gradient Style */
+  background: linear-gradient(135deg, #0077ff 0%, #00cfff 100%);
   color: white;
-}
+  box-shadow: 0 4px 15px rgba(0, 119, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
 
-.resumeBtn:hover {
-  background-color: #084298;
-}
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #00cfff 0%, #0077ff 100%);
+    z-index: -1;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+  }
 
-/* Hire Me Button */
-.hireBtn {
-  background-color: #198754;
-  color: white;
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 119, 255, 0.5);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 119, 255, 0.4);
+  }
 }
 
 .hireBtn:hover {

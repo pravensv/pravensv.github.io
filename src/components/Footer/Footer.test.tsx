@@ -6,8 +6,15 @@ describe('Footer Component', () => {
     it('renders footer content', () => {
         render(<Footer />);
         expect(screen.getByRole('contentinfo')).toBeInTheDocument();
-        // Check if brand is rendered (assuming it comes from JSON)
-        // We can check for some known text or just structure if JSON is dynamic
-        // For now, just checking if it renders without crashing and contains some elements
+
+        // Check for Brand
+        expect(screen.getByRole('heading', { name: /Praveen Voruganti/i })).toBeInTheDocument();
+
+        // Check for View Counter
+        expect(screen.getByText(/Total Portfolio Views/i)).toBeInTheDocument();
+
+        // Check for Social Links (images)
+        const images = screen.getAllByRole('img');
+        expect(images.length).toBeGreaterThan(0);
     });
 });

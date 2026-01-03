@@ -1,6 +1,7 @@
 [
   {
     "title": "Cisco Reimagined",
+    "projectType": "company",
     "description": "An internal web platform designed to modernize Cisco’s customer interaction workflows using the Khoros suite. Improved operational efficiency, UI experience, and cross-team collaboration.",
     "icon": "/icons/cisco.png",
     "responsibilities": [
@@ -15,6 +16,7 @@
   },
   {
     "title": "Cisco Techzone",
+    "projectType": "company",
     "description": "A knowledge-sharing and content-publishing platform for Cisco engineers and product teams. The platform enables employees to upload, edit, and publish technical content securely.",
     "icon": "/icons/cisco-techzone.png",
     "responsibilities": [
@@ -30,6 +32,7 @@
   },
   {
     "title": "AutoDesk User Automation",
+    "projectType": "company",
     "description": "A backend automation project for managing user cleanup, permission removal, and access revocation to maintain system security and reduce manual administrative effort.",
     "icon": "/icons/autodesk.png",
     "responsibilities": [
@@ -44,6 +47,7 @@
   },
   {
     "title": "Khoros to Aurora Migration",
+    "projectType": "company",
     "description": "Major migration project involving database transition from MySQL to Amazon Aurora, along with complete frontend modernization using React and GraphQL.",
     "icon": "/icons/aurora.png",
     "responsibilities": [
@@ -58,20 +62,8 @@
     ]
   },
   {
-    "title": "Internal Developer Portal",
-    "description": "A centralized portal designed for internal teams to manage builds, deployments, logs, and microservice health checks seamlessly.",
-    "icon": "/icons/devportal.png",
-    "responsibilities": [
-      "Developed microservice dashboards and live monitoring screens.",
-      "Integrated CI/CD metrics and build logs into React UI using REST and WebSockets.",
-      "Added role-based access for developers, managers, and administrators.",
-      "Created dark/light theme UI and improved overall UX using design patterns.",
-      "Reduced manual DevOps dependency by automating triggers and deployment actions.",
-      "Implemented advanced filtering, search, and analytics charts."
-    ]
-  },
-  {
     "title": "API Performance Optimization Suite",
+    "projectType": "personal",
     "description": "A toolkit for analyzing, profiling, and optimizing slow APIs across multiple microservices for better backend performance.",
     "icon": "/icons/performance.png",
     "responsibilities": [
@@ -80,6 +72,102 @@
       "Reduced API latency from 700ms to under 200ms through query refactoring.",
       "Built dashboards to display real-time API metrics and SLA breaches.",
       "Improved failover handling and circuit breaker configurations using resilience patterns."
+    ]
+  },
+  {
+    "title": "Mobile Store Sales & Repair Management System",
+    "projectType": "personal",
+    "description": "A full-stack application designed to manage mobile phone sales, repair tracking, inventory, and customer records for a local mobile store. The system streamlines billing, service workflows, and real-time stock monitoring.",
+    "icon": "/icons/mobile-store.png",
+    "demo_url": "https://pravensv.github.io/sainath/",
+    "responsibilities": [
+      "Designed and developed a full-stack application using Java, Spring Boot, React.js, and MySQL.",
+      "Implemented modules for mobile sales, repair ticket creation, and service status tracking.",
+      "Built inventory management with real-time stock updates and low-stock alerts.",
+      "Integrated customer management, billing, and invoice generation features.",
+      "Developed REST APIs for sales, repairs, products, and customer data handling.",
+      "Implemented role-based access for admin and store staff users.",
+      "Optimized database queries for faster search and reporting.",
+      "Deployed the application locally with Docker and configured environment-based profiles."
+    ]
+  },
+  {
+    "title": "IoT Based Smart Home Automation System",
+    "projectType": "academic",
+    "description": "A B.Tech academic project that implements smart home automation using IoT technologies. The system allows users to control home appliances like lights and fans using sound commands and human presence detection, improving energy efficiency and user convenience.",
+    "icon": "/icons/iot-home.png",
+    "responsibilities": [
+      "Designed and implemented an IoT-based home automation system using Arduino and sensors.",
+      "Controlled lights and fans using sound-based commands through a microphone module.",
+      "Implemented automatic fan and light control using PIR (human motion) sensors.",
+      "Integrated relay modules to switch electrical appliances safely.",
+      "Programmed microcontroller logic for automatic ON/OFF based on sensor inputs.",
+      "Tested system reliability for different environmental and usage scenarios.",
+      "Documented system architecture, circuit diagrams, and project reports as part of B.Tech submission."
+    ]
+  },
+  {
+    "title": "IoT Based Smart Aqua Fish Farming & Monitoring System",
+    "projectType": "academic",
+    "description": "A B.Tech academic IoT project designed to automate freshwater fish farming by monitoring water temperature and pH levels. The system automatically feeds fish and replaces water when conditions are unfavorable, making it easier to maintain healthy fish for home aquariums and live fish sales in markets.",
+    "icon": "/icons/aqua-iot.png",
+    "responsibilities": [
+      "Designed an IoT-based freshwater fish monitoring and automation system.",
+      "Monitored real-time water temperature and pH levels using sensors.",
+      "Implemented automatic fish feeding at scheduled intervals.",
+      "Developed logic to automatically change water when temperature or pH crossed safe limits.",
+      "Integrated microcontroller with relay modules to control pumps and feeders.",
+      "Improved fish survival rate and reduced manual maintenance effort.",
+      "Tested the system for home aquarium and small-scale market usage.",
+      "Prepared project documentation, circuit diagrams, and academic reports."
+    ]
+  },
+  {
+    "title": "Cloud Power Consumption Optimization Using Inactive Resource Management",
+    "projectType": "academic",
+    "description": "An M.Tech academic project focused on reducing cloud power consumption by automatically detecting and shutting down inactive API connections and underutilized servers. The system optimizes cloud resource usage, lowers operational costs, and supports green cloud computing practices.",
+    "icon": "/icons/cloud-power.png",
+    "responsibilities": [
+      "Designed a cloud optimization system to monitor API usage and server activity in real time.",
+      "Identified inactive or low-usage API connections and compute instances.",
+      "Implemented automated shutdown and restart mechanisms for idle servers.",
+      "Developed scheduling and threshold-based logic to prevent unnecessary resource consumption.",
+      "Collected and analyzed resource utilization metrics such as CPU, memory, and network usage.",
+      "Reduced cloud energy consumption and operational costs through automated resource control.",
+      "Simulated cloud environments to validate efficiency improvements.",
+      "Prepared M.Tech-level documentation, architecture diagrams, and evaluation reports."
+    ]
+  },
+  {
+    "title": "Insurance Policy Recommendation & Management System",
+    "projectType": "company",
+    "description": "A full-stack web application that helps users choose suitable insurance plans based on their requirements. The system supports life, health (critical illness), vehicle, and home insurance, dynamically suggesting policies and plans through interactive web pages.",
+    "icon": "/icons/insurance.png",
+    "responsibilities": [
+      "Designed and developed a full-stack insurance recommendation platform using Java and React.js.",
+      "Collected user requirements such as age, income, dependents, asset type, and coverage needs.",
+      "Implemented rule-based logic to suggest suitable life, health, vehicle, and home insurance plans.",
+      "Built dynamic React pages to display insurance plans, benefits, and comparisons.",
+      "Developed REST APIs in Java for policy management, user data, and recommendations.",
+      "Integrated form validations and step-by-step user onboarding workflows.",
+      "Optimized backend logic for fast plan filtering and recommendation accuracy.",
+      "Ensured scalable architecture and clean UI for easy navigation across insurance categories."
+    ]
+  },
+  {
+    "title": "NewsMailer – Email Based Article Creation & Sharing Platform",
+    "projectType": "company",
+    "description": "A web-based platform that converts incoming emails into structured articles using external APIs. The system enables users to create, edit, comment on, and share articles directly through email integration, simplifying content collaboration and distribution.",
+    "icon": "/icons/newsmailer.png",
+    "responsibilities": [
+      "Designed and developed an email-driven content management system using Java and React.js.",
+      "Integrated email services to receive, parse, and process incoming emails automatically.",
+      "Used external APIs to generate structured articles from email content.",
+      "Built web interfaces to edit, publish, and manage generated articles.",
+      "Implemented article sharing via email with support for comments and feedback.",
+      "Developed REST APIs for article creation, updates, comments, and email workflows.",
+      "Handled email threading to associate replies with article comments.",
+      "Ensured secure access and data validation for all email and web interactions."
     ]
   }
 ]

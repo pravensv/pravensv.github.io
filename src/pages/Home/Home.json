@@ -1,7 +1,16 @@
 {
   "title": "Praveen Voruganti | Portfolio",
   "heading": "Hi, I'm Praveen 👋",
-  "description": "I’m Voruganti Praveen, a Java Full Stack Developer with 4+ years of experience in building scalable, responsive web applications using Java, Spring Boot, React.js, and more.",
+  "description": [
+    "Java Full Stack Developer with 4.5+ years of experience building scalable, enterprise-grade web applications.",
+    "Currently working at Lloyds Banking Group, contributing to secure and high-performance banking systems.",
+    "Strong expertise in Java, Spring Boot, React.js, Microservices, and REST/GraphQL APIs.",
+    "Hands-on experience in end-to-end SDLC, from requirement analysis to production deployment.",
+    "Proven track record in modernizing legacy applications and improving system performance.",
+    "Experienced in CI/CD pipelines, cloud deployments (AWS), and DevOps collaboration.",
+    "Worked on global enterprise projects for Cisco, supporting internal platforms used by thousands of users.",
+    "Passionate about clean code, responsive UI, performance optimization, and secure systems."
+  ],
   "role": "Java Full Stack Developer || Open Source Enthusiast",
   "keywords": "Praveen Shetty, Voruganti Praveen, Voruganti Praveen Shetty, Praveensv, Portfolio, Java Full Stack Developer, Software Engineer, Shetty Guptha, Java, Spring Boot, React, Frontend Developer, Backend Developer, Full Stack Engineer, Web Developer, React Developer, TypeScript Developer, Software Developer Portfolio, Full Stack Web Developer",
   "buttonText": "View My Work"
