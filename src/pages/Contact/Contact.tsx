@@ -21,7 +21,11 @@ const Contact: React.FC = () => {
 
     return (
         <>
-            <SEO title="Contact | Praveen Voruganti" description="Get in touch with me." />
+            <SEO 
+                title="Contact" 
+                description="Get in touch with Praveen Voruganti - Java Full Stack Developer and Release Automation Engineer. Contact via email, GitHub, LinkedIn, or Twitter."
+                keywords="Contact, Email, GitHub, LinkedIn, Social Media, Get in touch, Developer Contact"
+            />
 
             <div className={styles.container}>
                 <h1 className={styles.sectionTitle}>Contact Me</h1>

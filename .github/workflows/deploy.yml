@@ -1,0 +1,53 @@
+name: Build and Deploy with SEO Optimization
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    strategy:
+      matrix:
+        node-version: [18.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run linter
+      run: npm run lint --if-present
+    
+    - name: Build project
+      run: npm run build
+    
+    - name: Test
+      run: npm run test --if-present
+    
+    - name: Deploy to GitHub Pages
+      if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+      run: npm run deploy
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+# SEO Optimization Tips:
+# 1. The build process now ensures proper meta tags
+# 2. Sitemap.xml is included in deployment
+# 3. robots.txt is included in deployment
+# 4. All semantic content is baked into index.html
+#
+# Additional SEO improvements when implemented:
+# 1. Add: npm install --save-dev vite-plugin-prerender
+# 2. Configure vite.config.ts with prerender plugin
+# 3. Update build script to include prerendering

@@ -2,15 +2,16 @@ import React from 'react';
 import styles from './Experience.module.scss';
 import experienceData from './Experience.json';
 import { motion } from 'framer-motion';
-import { Helmet } from 'react-helmet';
+import SEO from '../../components/SEO/SEO';
 
 const Experience: React.FC = () => {
     return (
         <div className={styles.container}>
-            <Helmet>
-                <title>Experience | Praveen Voruganti</title>
-                <meta name="description" content="Praveen's professional experience and career journey." />
-            </Helmet>
+            <SEO 
+                title="Experience" 
+                description="Praveen's professional experience including roles at Lloyds Banking Group and Cisco. Java Full Stack Developer with expertise in Spring Boot, React, Microservices, CI/CD pipelines, and service operations."
+                keywords="Experience, Java Development, Spring Boot, Microservices, CI/CD, Lloyds Banking Group, Cisco, Software Engineering, Release Automation, Service Operations"
+            />
 
             <h1 className={styles.sectionTitle}>Experience</h1>
 

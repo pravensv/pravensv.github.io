@@ -1,18 +1,16 @@
 import styles from "./Education.module.scss";
 import educationData from "./Education.json";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+import SEO from "../../components/SEO/SEO";
 
 export default function Education() {
   return (
     <div className={styles.container}>
-      <Helmet>
-        <title>Education | Praveen Voruganti</title>
-        <meta
-          name="description"
-          content="Praveen's education and academic background."
-        />
-      </Helmet>
+      <SEO 
+        title="Education" 
+        description="Praveen's educational background and academic qualifications in computer science and technology."
+        keywords="Education, Academic Background, Computer Science, Technology, Learning, Certifications"
+      />
 
       <h1 className={styles.sectionTitle}>Education</h1>
 

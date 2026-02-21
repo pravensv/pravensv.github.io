@@ -19,7 +19,11 @@ const Projects: React.FC = () => {
 
     return (
         <div className={styles.container}>
-            <SEO title="Projects | Praveen Voruganti" description="A showcase of my projects and technical achievements." />
+            <SEO 
+                title="Projects" 
+                description="Portfolio of Praveen's technical projects showcasing expertise in Java, Spring Boot, React.js, Microservices, CI/CD, and full-stack development."
+                keywords="Projects, Java Projects, React Projects, Full Stack, Spring Boot, Microservices, Portfolio Projects, Software Development"
+            />
 
             <h1 className={styles.sectionTitle}>Projects</h1>
 

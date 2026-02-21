@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./Skills.module.scss";
 import data from "./Skills.json";
+import SEO from "../../components/SEO/SEO";
 
 export default function Skills() {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -14,8 +15,16 @@ export default function Skills() {
       ? allSkills
       : allSkills.filter((skill) => skill.category === activeCategory);
 
+  const skillsKeywords = allSkills.map(s => s.name).join(", ");
+
   return (
     <div className={styles.container} id="skills-section">
+      <SEO 
+        title="Skills" 
+        description="Praveen's technical skills including Java, Spring Boot, React.js, Microservices, Docker, Kubernetes, AWS, CI/CD, and more."
+        keywords={`Technical Skills, ${skillsKeywords}, Java, Spring Boot, React, Microservices, DevOps, CI/CD, AWS`}
+      />
+
       <h2 className={styles.title}>Skills</h2>
 
       {/* Filters */}

@@ -1,4 +1,27 @@
+# robots.txt for Praveen Voruganti Portfolio
+# This file controls how search engines crawl and index your site
+
+# Allow all bots to crawl the entire site
 User-agent: *
 Allow: /
 
+# Disallow crawling of unnecessary files
+Disallow: /node_modules/
+Disallow: /coverage/
+Disallow: /.git/
+Disallow: /.env
+
+# Allow crawling of static assets
+Allow: /public/
+Allow: /*.css
+Allow: /*.js
+Allow: /*.json
+
+# XML Sitemap location - search engines will find your important pages here
 Sitemap: https://pravensv.github.io/sitemap.xml
+
+# Crawl delay and request rate (allows search engines to crawl efficiently)
+# Uncomment if needed, but usually not necessary for portfolios
+# Crawl-delay: 1
+# Request-rate: 1/10s
+
