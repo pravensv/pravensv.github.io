@@ -1,7 +1,7 @@
 import { render, waitFor } from '@testing-library/react';
 import SEO from './SEO';
 import { describe, it, expect } from 'vitest';
-import React from 'react';
+
 
 // React Helmet modifies the document head.
 // We can test side effects on document.title and meta tags.

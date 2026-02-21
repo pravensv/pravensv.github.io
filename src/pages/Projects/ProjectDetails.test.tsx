@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import ProjectDetails from './ProjectDetails';
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import { MemoryRouter, Routes, Route } from 'react-router-dom';
 
 describe('ProjectDetails Page', () => {

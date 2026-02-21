@@ -1,24 +1,38 @@
 .sectionWrapper {
-  // padding: 80px 20px;
   width: 100%;
   position: relative;
   overflow: hidden;
 
-  /* Soft gradient separator between each section */
+  /* Enhanced gradient separator between each section */
   &::after {
     content: "";
     position: absolute;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 60%;
+    width: 70%;
     height: 2px;
     background: linear-gradient(
       90deg,
       transparent,
-      rgba(0, 0, 0, 0.2),
+      rgba(0, 119, 255, 0.3),
       transparent
     );
+    box-shadow: 0 0 20px rgba(0, 119, 255, 0.2);
+  }
+
+  /* Subtle background animation */
+  animation: sectionFadeIn 0.6s ease-out;
+}
+
+@keyframes sectionFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

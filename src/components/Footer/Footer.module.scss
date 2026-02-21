@@ -2,12 +2,12 @@
   width: 100%;
   margin-top: 6rem;
   padding: 4rem 2rem 2rem 2rem;
-  background: rgba(18, 24, 38, 0.98);
+  background: linear-gradient(135deg, rgba(13, 17, 23, 0.95), rgba(30, 41, 59, 0.95));
   color: #e6eefc;
   font-family: "Inter", "Segoe UI", sans-serif;
-  border-top: 1px solid rgba(72, 99, 255, 0.15);
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(12px);
+  border-top: 2px solid rgba(0, 119, 255, 0.2);
+  box-shadow: 0 -10px 40px rgba(0, 119, 255, 0.1);
+  backdrop-filter: blur(10px);
   position: relative;
   overflow: hidden;
 }
@@ -19,7 +19,7 @@
   bottom: -10vw;
   width: 50vw;
   height: 50vw;
-  background: radial-gradient(circle, rgba(72, 169, 250, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 119, 255, 0.15) 0%, transparent 70%);
   z-index: 1;
   filter: blur(60px);
 }
@@ -72,53 +72,60 @@
 .brandBox {
   h2 {
     font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #fff 0%, #a0b3d6 100%);
+    font-weight: 900;
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, #00cfff 0%, #0077ff 100%);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
   }
 
   p {
     font-size: 1.1rem;
-    color: #a0b3d6;
-    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.8;
     max-width: 400px;
+    font-weight: 500;
   }
 }
 
 .viewCounter {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.8rem 1.2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  transition: transform 0.3s ease;
+  gap: 1rem;
+  background: rgba(0, 119, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  border: 2px solid rgba(0, 119, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 119, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-4px);
+    background: rgba(0, 119, 255, 0.15);
+    border-color: rgba(0, 119, 255, 0.5);
+    box-shadow: 0 15px 40px rgba(0, 119, 255, 0.25);
   }
 
   .viewLabel {
-    font-size: 0.9rem;
-    color: #8899ac;
-    font-weight: 500;
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
   }
 
   .count {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #4fc3f7;
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+    font-size: 1.3rem;
+    font-weight: 800;
+    background: linear-gradient(90deg, #0077ff, #00cfff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     text-shadow: 0 0 10px rgba(79, 195, 247, 0.3);
   }
 }
@@ -132,31 +139,50 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+  background: rgba(0, 119, 255, 0.1);
+  border: 2px solid rgba(0, 119, 255, 0.3);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 191, 255, 0.1), rgba(0, 119, 255, 0.05));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+  }
+
   img {
-    width: 24px;
-    height: 24px;
-    filter: invert(1) opacity(0.7);
-    transition: 0.3s;
+    width: 28px;
+    height: 28px;
+    filter: invert(1) opacity(0.8);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
   }
 
   &:hover {
-    transform: translateY(-4px);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-6px) scale(1.08);
+    background: rgba(0, 119, 255, 0.15);
+    border-color: rgba(0, 119, 255, 0.6);
+    box-shadow: 0 12px 30px rgba(0, 119, 255, 0.3);
+
+    &::before {
+      opacity: 1;
+    }
 
     img {
       filter: invert(1) opacity(1);
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
   }
 }
