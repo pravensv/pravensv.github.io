@@ -79,7 +79,7 @@
     "projectType": "personal",
     "description": "A full-stack application designed to manage mobile phone sales, repair tracking, inventory, and customer records for a local mobile store. The system streamlines billing, service workflows, and real-time stock monitoring.",
     "icon": "/icons/mobile-store.png",
-    "demo_url": "https://pravensv.github.io/sainath/",
+    "demo_url": "https://pravensv.github.io/sainath.com/",
     "responsibilities": [
       "Designed and developed a full-stack application using Java, Spring Boot, React.js, and MySQL.",
       "Implemented modules for mobile sales, repair ticket creation, and service status tracking.",
