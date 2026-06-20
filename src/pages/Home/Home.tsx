@@ -55,7 +55,7 @@ const Home: React.FC = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <img src="/praveen.jpeg" alt="Praveen Voruganti" />
+                    <img src="/praveen1.png" alt="Praveen Voruganti" />
                     <h1 className={styles.name}>
                         Hi, I'm <span>Praveen</span> 👋
                     </h1>
