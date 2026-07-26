@@ -16,9 +16,10 @@ export default function Background() {
         canvas.width = width;
         canvas.height = height;
 
+        const palette = ["#22d3ee", "#8b5cf6", "#f43f5e", "#38bdf8"];
         const particles: Particle[] = [];
-        const particleCount = 50; // Number of nodes
-        const connectionDistance = 150; // Distance to draw lines
+        const particleCount = 60;
+        const connectionDistance = 140;
 
         class Particle {
             x: number;
@@ -26,20 +27,21 @@ export default function Background() {
             vx: number;
             vy: number;
             size: number;
+            color: string;
 
             constructor() {
                 this.x = Math.random() * width;
                 this.y = Math.random() * height;
-                this.vx = (Math.random() - 0.5) * 0.5; // Slow movement
-                this.vy = (Math.random() - 0.5) * 0.5;
-                this.size = Math.random() * 2 + 1;
+                this.vx = (Math.random() - 0.5) * 0.4;
+                this.vy = (Math.random() - 0.5) * 0.4;
+                this.size = Math.random() * 2.2 + 1.1;
+                this.color = palette[Math.floor(Math.random() * palette.length)];
             }
 
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
 
-                // Bounce off edges
                 if (this.x < 0 || this.x > width) this.vx *= -1;
                 if (this.y < 0 || this.y > height) this.vy *= -1;
             }
@@ -48,27 +50,33 @@ export default function Background() {
                 if (!ctx) return;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = "rgba(0, 255, 255, 0.7)"; // Cyan nodes
+                ctx.fillStyle = this.color;
+                ctx.shadowBlur = 12;
+                ctx.shadowColor = this.color;
                 ctx.fill();
             }
         }
 
-        // Initialize particles
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
 
         function animate() {
             if (!ctx || !canvas) return;
-            ctx.clearRect(0, 0, width, height);
 
-            // Update and draw particles
+            const gradient = ctx.createLinearGradient(0, 0, width, height);
+            gradient.addColorStop(0, "rgba(2, 6, 23, 0.86)");
+            gradient.addColorStop(0.55, "rgba(15, 23, 42, 0.75)");
+            gradient.addColorStop(1, "rgba(30, 41, 59, 0.92)");
+            ctx.clearRect(0, 0, width, height);
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, width, height);
+
             particles.forEach((particle) => {
                 particle.update();
                 particle.draw();
             });
 
-            // Draw connections
             for (let i = 0; i < particles.length; i++) {
                 for (let j = i + 1; j < particles.length; j++) {
                     const dx = particles[i].x - particles[j].x;
@@ -77,8 +85,8 @@ export default function Background() {
 
                     if (distance < connectionDistance) {
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(0, 255, 255, ${1 - distance / connectionDistance})`; // Fade out line
-                        ctx.lineWidth = 0.5;
+                        ctx.strokeStyle = `rgba(255,255,255,${0.12 * (1 - distance / connectionDistance)})`;
+                        ctx.lineWidth = 0.8;
                         ctx.moveTo(particles[i].x, particles[i].y);
                         ctx.lineTo(particles[j].x, particles[j].y);
                         ctx.stroke();
