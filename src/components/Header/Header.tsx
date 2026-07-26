@@ -50,8 +50,8 @@ export default function Header({ scrollToSection, refs }: HeaderProps) {
       {/* Desktop Navigation */}
       <nav className={styles.navDesktop}>
         <span onClick={() => handleNavClick(refs.homeRef)}>Home</span>
-        <span onClick={() => handleNavClick(refs.educationRef)}>Education</span>
         <span onClick={() => handleNavClick(refs.experienceRef)}>Experience</span>
+        <span onClick={() => handleNavClick(refs.educationRef)}>Education</span>
         <span onClick={() => handleNavClick(refs.projectsRef)}>Projects</span>
         <span onClick={() => handleNavClick(refs.skillsRef)}>Skills</span>
         <span onClick={() => handleNavClick(refs.contactRef)}>Contact</span>
@@ -67,8 +67,8 @@ export default function Header({ scrollToSection, refs }: HeaderProps) {
       {/* Mobile Menu */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""}`}>
         <span onClick={() => handleNavClick(refs.homeRef)}>Home</span>
-        <span onClick={() => handleNavClick(refs.educationRef)}>Education</span>
         <span onClick={() => handleNavClick(refs.experienceRef)}>Experience</span>
+        <span onClick={() => handleNavClick(refs.educationRef)}>Education</span>
         <span onClick={() => handleNavClick(refs.projectsRef)}>Projects</span>
         <span onClick={() => handleNavClick(refs.skillsRef)}>Skills</span>
         <span onClick={() => handleNavClick(refs.contactRef)}>Contact</span>

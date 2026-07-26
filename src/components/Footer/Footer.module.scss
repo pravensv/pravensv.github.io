@@ -1,12 +1,12 @@
 .footer {
   width: 100%;
-  margin-top: 6rem;
-  padding: 4rem 2rem 2rem 2rem;
-  background: rgba(18, 24, 38, 0.98);
+  margin-top: 5.5rem;
+  padding: 3.2rem 1.4rem 1.8rem;
+  background: linear-gradient(180deg, rgba(8, 15, 31, 0.96) 0%, rgba(15, 23, 42, 0.96) 100%);
   color: #e6eefc;
   font-family: "Inter", "Segoe UI", sans-serif;
-  border-top: 1px solid rgba(72, 99, 255, 0.15);
-  box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 -10px 32px rgba(2, 6, 23, 0.24);
   backdrop-filter: blur(12px);
   position: relative;
   overflow: hidden;
@@ -15,19 +15,19 @@
 .footer::before {
   content: "";
   position: absolute;
-  left: -20vw;
-  bottom: -10vw;
-  width: 50vw;
-  height: 50vw;
-  background: radial-gradient(circle, rgba(72, 169, 250, 0.1) 0%, transparent 70%);
+  right: -8rem;
+  bottom: -8rem;
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle, rgba(34, 211, 238, 0.16) 0%, transparent 70%);
   z-index: 1;
-  filter: blur(60px);
+  filter: blur(40px);
 }
 
 .content {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
@@ -35,8 +35,8 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 2rem;
-  margin-bottom: 3rem;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1.2rem;
 
   @media (max-width: 768px) {
     align-items: center;
@@ -71,92 +71,89 @@
 
 .brandBox {
   h2 {
-    font-size: 2.5rem;
+    font-size: 1.8rem;
     font-weight: 800;
-    letter-spacing: -0.5px;
-    background: linear-gradient(135deg, #fff 0%, #a0b3d6 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.03em;
+    color: #f8fafc;
     margin-bottom: 0.5rem;
   }
 
   p {
-    font-size: 1.1rem;
-    color: #a0b3d6;
-    line-height: 1.6;
-    max-width: 400px;
+    font-size: 1rem;
+    color: #aab8ca;
+    line-height: 1.65;
+    max-width: 420px;
   }
 }
 
 .viewCounter {
   display: inline-flex;
   align-items: center;
-  gap: 0.8rem;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.8rem 1.2rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-  transition: transform 0.3s ease;
+  gap: 0.7rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, background 0.25s ease;
 
   &:hover {
     transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.09);
   }
 
   .viewLabel {
-    font-size: 0.9rem;
-    color: #8899ac;
-    font-weight: 500;
+    font-size: 0.82rem;
+    color: #8ea1b7;
+    font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.08em;
   }
 
   .count {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
-    color: #4fc3f7;
-    text-shadow: 0 0 10px rgba(79, 195, 247, 0.3);
+    color: #67e8f9;
   }
 }
 
 .socialBox {
   display: flex;
-  gap: 1.5rem;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .socialLink {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s ease;
   position: relative;
   overflow: hidden;
 
   img {
-    width: 24px;
-    height: 24px;
-    filter: invert(1) opacity(0.7);
-    transition: 0.3s;
+    width: 22px;
+    height: 22px;
+    filter: invert(1) opacity(0.72);
+    transition: 0.25s ease;
   }
 
   &:hover {
-    transform: translateY(-4px);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 18px rgba(2, 6, 23, 0.2);
 
     img {
       filter: invert(1) opacity(1);
-      transform: scale(1.1);
+      transform: scale(1.08);
     }
   }
 }
@@ -164,8 +161,8 @@
 .separator {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-  margin-bottom: 2rem;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+  margin-bottom: 1.25rem;
 }
 
 .copy {
@@ -173,8 +170,6 @@
 
   p {
     font-size: 0.9rem;
-    color: #5d6e85;
-
-    /* Optional: Add a heart symbol styling if present in copyright text */
+    color: #72839a;
   }
 }

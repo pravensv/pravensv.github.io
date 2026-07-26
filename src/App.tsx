@@ -59,11 +59,11 @@ function App() {
               </SectionWrapper>
 
               <SectionWrapper>
-                <div ref={educationRef}><Education /></div>
+                <div ref={experienceRef}><Experience /></div>
               </SectionWrapper>
 
               <SectionWrapper>
-                <div ref={experienceRef}><Experience /></div>
+                <div ref={educationRef}><Education /></div>
               </SectionWrapper>
 
               <SectionWrapper>

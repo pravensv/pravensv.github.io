@@ -11,9 +11,9 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, url, type }) => {
-  const siteTitle = "Praveen Voruganti | Java Full Stack Developer";
-  const defaultDescription = "Portfolio of Praveen Voruganti, a Java Full Stack Developer and Open Source Enthusiast specializing in building high-performance web applications.";
-  const defaultImage = "https://pravensv.github.io/praveen1.png"; // Assuming this exists or using a screenshot
+  const siteTitle = "Praveen Voruganti | Java Full Stack Developer & Release Automation Engineer";
+  const defaultDescription = "Portfolio of Praveen Voruganti, a Java Full Stack Developer and Release Automation Engineer building scalable enterprise applications with Spring Boot, React.js, AWS, microservices, and CI/CD automation.";
+  const defaultImage = "https://pravensv.github.io/praveen.jpeg";
   const siteUrl = "https://pravensv.github.io/";
 
   return (
@@ -21,7 +21,7 @@ const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, url, typ
       {/* Standard Metadata */}
       <title>{title ? `${title} | Praveen Voruganti` : siteTitle}</title>
       <meta name="description" content={description || defaultDescription} />
-      <meta name="keywords" content={keywords || "Java Full Stack Developer, React, Spring Boot, Portfolio, Praveen Voruganti"} />
+      <meta name="keywords" content={keywords || "Praveen Voruganti, Java Full Stack Developer, Release Automation Engineer, Spring Boot, React.js, AWS, Microservices, CI/CD, DevOps, Docker, Kubernetes, enterprise portfolio"} />
       <meta name="theme-color" content="#0a0a0a" />
 
       {/* Open Graph / Facebook */}

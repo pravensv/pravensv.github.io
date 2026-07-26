@@ -6,4 +6,8 @@
     z-index: -1;
     pointer-events: none;
     opacity: 0.95;
+    contain: paint;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }

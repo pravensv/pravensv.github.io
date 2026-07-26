@@ -1,12 +1,10 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  color-scheme: dark;
+  color: rgba(248, 250, 252, 0.95);
+  background-color: #020617;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,6 +29,16 @@ img, video {
   max-width: 100%;
   height: auto;
 }
+
+h1, h2, h3, h4 {
+  font-family: 'Segoe UI', 'Inter', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+button, a, input, textarea, select {
+  font: inherit;
+}
+
 .container {
   width: 100%;
   max-width: 100%;
