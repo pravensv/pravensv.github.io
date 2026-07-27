@@ -6,6 +6,7 @@ import { describe, it, expect, vi } from 'vitest';
 vi.mock('framer-motion', () => ({
     motion: {
         div: ({ children, className, ...props }: any) => <div className={className} {...props}>{children}</div>,
+        img: ({ children, className, ...props }: any) => <img className={className} {...props}>{children}</img>,
     },
 }));
 
@@ -14,6 +15,7 @@ describe('Home Page', () => {
         render(<Home />);
         expect(screen.getByText(/Hi, I'm/i)).toBeInTheDocument();
         expect(screen.getByText(/Praveen/i)).toBeInTheDocument();
+        expect(screen.getByRole('img', { name: /Praveen Voruganti/i })).toBeInTheDocument();
         expect(screen.getByText(/Resume/i)).toBeInTheDocument();
         // Hire Me button is removed, so ensure it's not there
         expect(screen.queryByText(/Hire Me/i)).not.toBeInTheDocument();

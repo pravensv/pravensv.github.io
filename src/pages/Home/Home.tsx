@@ -9,8 +9,10 @@ const Home: React.FC = () => {
     const [displayedText, setDisplayedText] = React.useState<string[]>([]);
     const [lineIndex, setLineIndex] = React.useState(0);
     const [charIndex, setCharIndex] = React.useState(0);
+    const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
     const fullText = homeData.description;
     const scrollRef = React.useRef<HTMLDivElement>(null);
+    const portraitImages = ['/praveen.png', '/praveen1.png'];
 
     // Auto-scroll to bottom effect
     React.useEffect(() => {
@@ -45,6 +47,14 @@ const Home: React.FC = () => {
         }
     }, [charIndex, lineIndex, fullText]);
 
+    React.useEffect(() => {
+        const interval = window.setInterval(() => {
+            setCurrentImageIndex((prev) => (prev + 1) % portraitImages.length);
+        }, 3500);
+
+        return () => window.clearInterval(interval);
+    }, [portraitImages.length]);
+
     return (
         <>
             <SEO title={homeData.title} description={homeData.description.join(" ")} keywords={homeData.keywords} />
@@ -55,7 +65,17 @@ const Home: React.FC = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <img src="/praveen.png" alt="Praveen Voruganti" />
+                    <div className={styles.imageFrame}>
+                        <motion.img
+                            key={portraitImages[currentImageIndex]}
+                            src={portraitImages[currentImageIndex]}
+                            alt="Praveen Voruganti"
+                            className={styles.heroImage}
+                            initial={{ opacity: 0, x: 40 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, ease: 'easeOut' }}
+                        />
+                    </div>
                     <h1 className={styles.name}>
                         Hi, I'm <span>Praveen</span> 👋
                     </h1>
