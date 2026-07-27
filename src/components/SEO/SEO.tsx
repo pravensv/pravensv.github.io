@@ -13,7 +13,7 @@ interface SEOProps {
 const SEO: React.FC<SEOProps> = ({ title, description, keywords, image, url, type }) => {
   const siteTitle = "Praveen Voruganti | Java Full Stack Developer & Release Automation Engineer";
   const defaultDescription = "Portfolio of Praveen Voruganti, a Java Full Stack Developer and Release Automation Engineer building scalable enterprise applications with Spring Boot, React.js, AWS, microservices, and CI/CD automation.";
-  const defaultImage = "https://pravensv.github.io/praveen.jpeg";
+  const defaultImage = "https://pravensv.github.io/praveen.png";
   const siteUrl = "https://pravensv.github.io/";
 
   return (
