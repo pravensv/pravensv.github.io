@@ -1,22 +1,22 @@
 [
   {
     "platform": "Gmail",
-    "icon": "/icons/gmail.png",
+    "icon": "/icons/gmail.svg",
     "link": "mailto:praveenshetty.code@gmail.com"
   },
   {
     "platform": "Instagram",
-    "icon": "/icons/instagram.png",
+    "icon": "/icons/instagram.svg",
     "link": "https://www.instagram.com/nameisrajuu"
   },
   {
     "platform": "LinkedIn",
-    "icon": "/icons/linkedin.png",
+    "icon": "/icons/linkedin.svg",
     "link": "https://www.linkedin.com/in/praveen-voruganti-90b428181/"
   },
   {
     "platform": "GitHub",
-    "icon": "/icons/github.png",
+    "icon": "/icons/github.svg",
     "link": "https://github.com/pravensv"
   }
 ]

@@ -1,13 +1,13 @@
 .footer {
   width: 100%;
   margin-top: 5.5rem;
-  padding: 3.2rem 1.4rem 1.8rem;
-  background: linear-gradient(180deg, rgba(8, 15, 31, 0.96) 0%, rgba(15, 23, 42, 0.96) 100%);
-  color: #e6eefc;
-  font-family: "Inter", "Segoe UI", sans-serif;
+  padding: 3.5rem 1.6rem 2rem;
+  background: rgba(12, 12, 14, 0.95);
+  color: #e2e8f0;
+  font-family: "Plus Jakarta Sans", "Inter", sans-serif;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 -10px 32px rgba(2, 6, 23, 0.24);
-  backdrop-filter: blur(12px);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
   position: relative;
   overflow: hidden;
 }
@@ -19,9 +19,9 @@
   bottom: -8rem;
   width: 18rem;
   height: 18rem;
-  background: radial-gradient(circle, rgba(34, 211, 238, 0.16) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(255, 122, 0, 0.14) 0%, transparent 70%);
   z-index: 1;
-  filter: blur(40px);
+  filter: blur(50px);
 }
 
 .content {
@@ -71,16 +71,23 @@
 
 .brandBox {
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
     font-weight: 800;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     color: #f8fafc;
     margin-bottom: 0.5rem;
+
+    span {
+      background: linear-gradient(135deg, #ff7a00 0%, #ff9e42 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 
   p {
-    font-size: 1rem;
-    color: #aab8ca;
+    font-size: 0.98rem;
+    color: #94a3b8;
     line-height: 1.65;
     max-width: 420px;
   }
@@ -90,22 +97,22 @@
   display: inline-flex;
   align-items: center;
   gap: 0.7rem;
-  background: rgba(255, 255, 255, 0.06);
-  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.65rem 1.1rem;
   border-radius: 999px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   transition: transform 0.25s ease, background 0.25s ease;
 
   &:hover {
     transform: translateY(-2px);
-    background: rgba(255, 255, 255, 0.09);
+    background: rgba(255, 255, 255, 0.08);
   }
 
   .viewLabel {
-    font-size: 0.82rem;
-    color: #8ea1b7;
+    font-size: 0.8rem;
+    color: #94a3b8;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -115,13 +122,13 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 1rem;
     font-weight: 700;
-    color: #67e8f9;
+    color: #ff7a00;
   }
 }
 
 .socialBox {
   display: flex;
-  gap: 1rem;
+  gap: 0.85rem;
   flex-wrap: wrap;
 }
 
@@ -129,10 +136,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.06);
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: all 0.25s ease;
   position: relative;
@@ -141,19 +148,20 @@
   img {
     width: 22px;
     height: 22px;
-    filter: invert(1) opacity(0.72);
-    transition: 0.25s ease;
+    object-fit: contain;
+    opacity: 0.85;
+    transition: transform 0.25s ease, opacity 0.25s ease;
   }
 
   &:hover {
     transform: translateY(-3px);
     background: rgba(255, 255, 255, 0.12);
-    border-color: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 18px rgba(2, 6, 23, 0.2);
+    border-color: rgba(255, 122, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(255, 122, 0, 0.15);
 
     img {
-      filter: invert(1) opacity(1);
-      transform: scale(1.08);
+      opacity: 1;
+      transform: scale(1.1);
     }
   }
 }
@@ -161,7 +169,7 @@
 .separator {
   width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
   margin-bottom: 1.25rem;
 }
 
@@ -169,7 +177,7 @@
   text-align: center;
 
   p {
-    font-size: 0.9rem;
-    color: #72839a;
+    font-size: 0.88rem;
+    color: #64748b;
   }
 }

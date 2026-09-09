@@ -10,15 +10,43 @@ export default function Footer() {
     if (hasFetched.current) return;
     hasFetched.current = true;
 
-    // CounterAPI - Reliable counter for static sites
-    // This creates/increments a counter for the portfolio
-    fetch('https://api.counterapi.dev/v1/praveensv/portfolio/up')
-      .then((res) => res.json())
-      .then((data) => setViewCount(data.count))
-      .catch((err) => {
-        console.error("Error fetching view count:", err);
-        setViewCount(1024); // Fallback for aesthetic purposes if API fails
-      });
+    const BASE_VIEWS = 1428;
+    const STORAGE_KEY = 'praveensv_portfolio_views';
+    let currentViews = BASE_VIEWS;
+
+    try {
+      const storedViews = localStorage.getItem(STORAGE_KEY);
+      currentViews = storedViews ? parseInt(storedViews, 10) : BASE_VIEWS;
+
+      // Increment view count once per browser session
+      if (!sessionStorage.getItem('visited_session')) {
+        currentViews += 1;
+        sessionStorage.setItem('visited_session', 'true');
+        localStorage.setItem(STORAGE_KEY, currentViews.toString());
+      }
+      setViewCount(currentViews);
+    } catch {
+      setViewCount(BASE_VIEWS + 1);
+    }
+
+    // Optional background sync with online counter API
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 2500);
+
+    fetch('https://api.counterapi.dev/v1/praveensv/portfolio/up', { signal: controller.signal })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((data) => {
+        if (data && typeof data.count === 'number') {
+          setViewCount(data.count);
+          try {
+            localStorage.setItem(STORAGE_KEY, data.count.toString());
+          } catch {}
+        }
+      })
+      .catch(() => {
+        // Fallback already active from localStorage/BASE_VIEWS
+      })
+      .finally(() => clearTimeout(timeoutId));
   }, []);
 
   return (

@@ -4,10 +4,14 @@ import { describe, it, expect, vi } from 'vitest';
 
 // Mock framer-motion
 vi.mock('framer-motion', () => ({
-    motion: {
-        div: ({ children, className, ...props }: any) => <div className={className} {...props}>{children}</div>,
-        img: ({ children, className, ...props }: any) => <img className={className} {...props}>{children}</img>,
-    },
+    motion: new Proxy({}, {
+        get: (_, prop: string) => {
+            return ({ children, className, ...props }: any) => {
+                const Tag = prop as any;
+                return <Tag className={className} {...props}>{children}</Tag>;
+            };
+        }
+    }),
 }));
 
 describe('Home Page', () => {

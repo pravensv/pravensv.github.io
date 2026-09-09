@@ -12,7 +12,7 @@ vi.mock('framer-motion', () => ({
 describe('Education Page', () => {
     it('renders education entries', () => {
         render(<Education />);
-        expect(screen.getByText(/Education/i)).toBeInTheDocument();
+        expect(screen.getByRole('heading', { level: 1, name: /Education/i })).toBeInTheDocument();
         // Check if at least one degree is rendered (assuming data exists)
         // We can check for specific text if we know the JSON content, or just check structure
     });

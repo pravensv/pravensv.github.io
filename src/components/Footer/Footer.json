@@ -2,10 +2,10 @@
   "brand": "Praveen Voruganti",
   "description": "Designing stylish, high-performance web experiences. Clean code, glassmorphism, and next-gen UI for modern brands.",
   "socialLinks": [
-    { "platform": "GitHub", "icon": "icons/github.png", "link": "https://github.com/pravensv" },
-    { "platform": "LinkedIn", "icon": "icons/linkedin.png", "link": "https://www.linkedin.com/in/praveen-voruganti-90b428181" },
-    { "platform": "Instagram", "icon": "icons/instagram.png", "link": "https://www.instagram.com/nameisrajuu" },
-    { "platform": "Gmail", "icon": "icons/gmail.png", "link": "mailto:pravenshetty.code@gmail.com" }
+    { "platform": "GitHub", "icon": "/icons/github.svg", "link": "https://github.com/pravensv" },
+    { "platform": "LinkedIn", "icon": "/icons/linkedin.svg", "link": "https://www.linkedin.com/in/praveen-voruganti-90b428181" },
+    { "platform": "Instagram", "icon": "/icons/instagram.svg", "link": "https://www.instagram.com/nameisrajuu" },
+    { "platform": "Gmail", "icon": "/icons/gmail.svg", "link": "mailto:praveenshetty.code@gmail.com" }
   ],
   "copyright": "© 2025 Praveen Voruganti — Designed & developed with creativity and precision."
 }

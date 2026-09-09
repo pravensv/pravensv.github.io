@@ -1,19 +1,24 @@
 .container {
-  padding-top: 80px;
+  padding-top: 60px;
 }
 
 .sectionTitle {
   text-align: center;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: #0077ff;
+  font-size: clamp(2rem, 3.5vw, 2.7rem);
+  margin-bottom: 2.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #ffffff 0%, #ff7a00 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -0.02em;
 }
 
 .timeline {
   position: relative;
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
-  padding: 2rem 0;
+  padding: 1.5rem 0;
 }
 
 .progressLine {
@@ -21,76 +26,91 @@
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 4px;
-  background: linear-gradient(to bottom, #0077ff, #00cfff);
+  width: 3px;
+  background: linear-gradient(180deg, #ff7a00 0%, #d95300 100%);
   transform: translateX(-50%);
   z-index: 1;
-  border-radius: 2px;
+  border-radius: 999px;
+  box-shadow: 0 0 14px rgba(255, 122, 0, 0.35);
 }
 
 .timelineCard {
   position: relative;
   width: 45%;
-  background: #e6f2ff;
-  padding: 1.5rem;
-  border-radius: 15px;
-  margin: 2rem 0;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(18, 18, 22, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(16px);
+  padding: 1.6rem 1.8rem;
+  border-radius: 1.25rem;
+  margin: 2.2rem 0;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
   z-index: 2;
 
   &:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(255, 122, 0, 0.18);
+    border-color: rgba(255, 122, 0, 0.35);
   }
 
   .iconWrapper {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 60px;
-    height: 60px;
-    left: -80px;
-    background: #fff;
+    width: 56px;
+    height: 56px;
+    left: -73px;
+    background: rgba(18, 18, 22, 0.95);
+    border: 2px solid rgba(255, 122, 0, 0.4);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 18px rgba(255, 122, 0, 0.25);
 
     img {
-      width: 40px;
-      height: 40px;
+      width: 34px;
+      height: 34px;
       object-fit: contain;
     }
   }
 
   h3 {
-    font-size: 1.4rem;
-    color: #0077ff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #ff7a00;
     margin-bottom: 0.3rem;
+    letter-spacing: -0.01em;
   }
 
   h4 {
-    font-size: 1.1rem;
-    color: #333;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #f8fafc;
     margin-bottom: 0.3rem;
   }
 
   span {
-    font-size: 0.95rem;
-    color: #555;
-    font-weight: 500;
+    display: inline-block;
+    font-size: 0.88rem;
+    color: #ff9e42;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
   }
 
   ul {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
     padding-left: 1.2rem;
 
     li {
-      font-size: 1rem;
-      color: #444;
-      margin-bottom: 0.5rem;
+      font-size: 0.96rem;
+      color: #cbd5e1;
+      margin-bottom: 0.55rem;
+      line-height: 1.6;
+
+      &::marker {
+        color: #ff7a00;
+      }
     }
   }
 }
@@ -101,20 +121,24 @@
 
   .iconWrapper {
     left: auto;
-    right: -80px;
+    right: -73px;
   }
 }
 
 /* Mobile view */
 @media (max-width: 768px) {
   .timelineCard {
-    width: 90%;
+    width: 100%;
     margin-left: 0 !important;
     margin-right: 0 !important;
 
     .iconWrapper {
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: relative;
+      top: auto;
+      left: auto !important;
+      right: auto !important;
+      transform: none;
+      margin: 0 auto 1rem;
     }
   }
 

@@ -9,10 +9,8 @@ const Home: React.FC = () => {
     const [displayedText, setDisplayedText] = React.useState<string[]>([]);
     const [lineIndex, setLineIndex] = React.useState(0);
     const [charIndex, setCharIndex] = React.useState(0);
-    const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
     const fullText = homeData.description;
     const scrollRef = React.useRef<HTMLDivElement>(null);
-    const portraitImages = ['/praveen.png', '/praveen1.png'];
 
     // Auto-scroll to bottom effect
     React.useEffect(() => {
@@ -34,70 +32,109 @@ const Home: React.FC = () => {
                         return newLines;
                     });
                     setCharIndex(charIndex + 1);
-                }, 50); // Slower typing speed (was 20)
+                }, 50);
                 return () => clearTimeout(timeout);
             } else {
-                // Move to next line
                 const timeout = setTimeout(() => {
                     setLineIndex(lineIndex + 1);
                     setCharIndex(0);
-                }, 500); // Increased delay between lines
+                }, 500);
                 return () => clearTimeout(timeout);
             }
         }
     }, [charIndex, lineIndex, fullText]);
 
-    React.useEffect(() => {
-        const interval = window.setInterval(() => {
-            setCurrentImageIndex((prev) => (prev + 1) % portraitImages.length);
-        }, 3500);
-
-        return () => window.clearInterval(interval);
-    }, [portraitImages.length]);
-
     return (
         <>
             <SEO title={homeData.title} description={homeData.description.join(" ")} keywords={homeData.keywords} />
             <div className={styles.container}>
+                {/* Top greeting pill */}
                 <motion.div
-                    className={styles.imageSection}
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
+                    className={styles.greetingPill}
+                    initial={{ opacity: 0, y: -15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6 }}
                 >
-                    <div className={styles.imageFrame}>
+                    <span>Hello! 👋</span>
+                </motion.div>
+
+                {/* Hero Title */}
+                <motion.h1
+                    className={styles.heroTitle}
+                    initial={{ opacity: 0, y: -15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: 0.1 }}
+                >
+                    Hi, I'm <span>Praveen</span>,<br />
+                    Java Full Stack & Release Engineer
+                </motion.h1>
+
+                {/* Hero Center Image */}
+                <motion.div
+                    className={styles.heroCenter}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                    <div className={styles.imageWrapper}>
+                        <div className={styles.glowBackdrop} />
                         <motion.img
-                            key={portraitImages[currentImageIndex]}
-                            src={portraitImages[currentImageIndex]}
+                            src="/praveen_cutout.png"
                             alt="Praveen Voruganti"
-                            className={styles.heroImage}
-                            initial={{ opacity: 0, x: 40 }}
-                            animate={{ opacity: 1, x: 0 }}
+                            className={styles.portraitImg}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6, ease: 'easeOut' }}
                         />
                     </div>
-                    <h1 className={styles.name}>
-                        Hi, I'm <span>Praveen</span> 👋
-                    </h1>
 
-                    <div className={styles.buttonContainer}>
-                        <button
-                            className={styles.resumeBtn}
-                            onClick={() => window.open('/Praveen_Voruganti_Resume.pdf', '_blank')}
-                        >
-                            Resume
-                        </button>
+                    {/* Floating Badges */}
+                    <div className={styles.floatingBadgeLeft}>
+                        <div className={styles.stars}>★★★★★</div>
+                        <div className={styles.badgeLabel}>5+ Years</div>
+                        <div className={styles.badgeSub}>Experience</div>
+                    </div>
+
+                    {/* Right floating badge */}
+                    <div className={styles.floatingBadgeRight}>
+                        <div className={styles.badgeIcon}>🤖</div>
+                        <div className={styles.badgeLabel}>AI Automation</div>
+                        <div className={styles.badgeSub}>& Service Ops</div>
                     </div>
                 </motion.div>
 
+                {/* Simple Action Buttons Row Below Image */}
                 <motion.div
-                    className={styles.textSection}
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.8 }}
+                    className={styles.ctaRow}
+                    initial={{ opacity: 0, y: 15 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.28 }}
+                >
+                    <button
+                        className={styles.primaryBtn}
+                        onClick={() => window.open('/Praveen_Voruganti_Resume.pdf', '_blank')}
+                    >
+                        Resume ↗
+                    </button>
+                    <button
+                        className={styles.secondaryBtn}
+                        onClick={() => {
+                            const contactEl = document.getElementById('contact-section');
+                            if (contactEl) contactEl.scrollIntoView({ behavior: 'smooth' });
+                        }}
+                    >
+                        Contact Me
+                    </button>
+                </motion.div>
+
+                {/* Role & Typewriter Section */}
+                <motion.div
+                    className={styles.descriptionContainer}
+                    initial={{ opacity: 0, y: 25 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.35 }}
                 >
                     <h2 className={styles.role}>{homeData.role}</h2>
-
                     <div className={styles.descriptionWrapper} ref={scrollRef}>
                         {displayedText.map((line, idx) => (
                             <p key={idx} className={styles.descriptionLine}>
