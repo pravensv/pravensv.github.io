@@ -19,6 +19,7 @@ type HeaderProps = {
 
 export default function Header({ scrollToSection, refs }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -28,11 +29,11 @@ export default function Header({ scrollToSection, refs }: HeaderProps) {
 
   const closeMenu = () => setMenuOpen(false);
 
-  const handleNavClick = (ref: RefObject<HTMLElement | null>) => {
+  const handleNavClick = (ref: RefObject<HTMLElement | null>, sectionName: string) => {
+    setActiveSection(sectionName);
     closeMenu();
     if (location.pathname !== "/") {
       navigate("/");
-      // Wait for navigation to complete and component to mount
       setTimeout(() => {
         scrollToSection(ref);
       }, 100);
@@ -42,36 +43,76 @@ export default function Header({ scrollToSection, refs }: HeaderProps) {
   };
 
   return (
-    <header className={styles.header}>
-      <div className={styles.logo}>
-        Praveen<span>Dev</span>
+    <header className={styles.headerContainer}>
+      <div className={styles.navCapsule}>
+        {/* Desktop Left Nav Links */}
+        <div className={styles.navGroupLeft}>
+          <span
+            className={activeSection === "home" ? styles.activePill : ""}
+            onClick={() => handleNavClick(refs.homeRef, "home")}
+          >
+            Home
+          </span>
+          <span
+            className={activeSection === "experience" ? styles.activePill : ""}
+            onClick={() => handleNavClick(refs.experienceRef, "experience")}
+          >
+            Experience
+          </span>
+          <span
+            className={activeSection === "education" ? styles.activePill : ""}
+            onClick={() => handleNavClick(refs.educationRef, "education")}
+          >
+            Education
+          </span>
+        </div>
+
+        {/* Center Logo */}
+        <div className={styles.logo} onClick={() => handleNavClick(refs.homeRef, "home")}>
+          <div className={styles.logoBadge}>P</div>
+          <span>
+            Praveen<span>Dev</span>
+          </span>
+        </div>
+
+        {/* Desktop Right Nav Links */}
+        <div className={styles.navGroupRight}>
+          <span
+            className={activeSection === "projects" ? styles.activePill : ""}
+            onClick={() => handleNavClick(refs.projectsRef, "projects")}
+          >
+            Projects
+          </span>
+          <span
+            className={activeSection === "skills" ? styles.activePill : ""}
+            onClick={() => handleNavClick(refs.skillsRef, "skills")}
+          >
+            Skills
+          </span>
+          <span
+            className={activeSection === "contact" ? styles.activePill : ""}
+            onClick={() => handleNavClick(refs.contactRef, "contact")}
+          >
+            Contact
+          </span>
+        </div>
+
+        {/* Mobile Hamburger Icon */}
+        <div className={styles.menuIcon} onClick={handleToggle}>
+          <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+          <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+          <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+        </div>
       </div>
 
-      {/* Desktop Navigation */}
-      <nav className={styles.navDesktop}>
-        <span onClick={() => handleNavClick(refs.homeRef)}>Home</span>
-        <span onClick={() => handleNavClick(refs.experienceRef)}>Experience</span>
-        <span onClick={() => handleNavClick(refs.educationRef)}>Education</span>
-        <span onClick={() => handleNavClick(refs.projectsRef)}>Projects</span>
-        <span onClick={() => handleNavClick(refs.skillsRef)}>Skills</span>
-        <span onClick={() => handleNavClick(refs.contactRef)}>Contact</span>
-      </nav>
-
-      {/* Mobile Hamburger Button */}
-      <div className={styles.menuIcon} onClick={handleToggle}>
-        <span className={menuOpen ? styles.barOpen : styles.bar}></span>
-        <span className={menuOpen ? styles.barOpen : styles.bar}></span>
-        <span className={menuOpen ? styles.barOpen : styles.bar}></span>
-      </div>
-
-      {/* Mobile Menu */}
+      {/* Mobile Drawer Menu */}
       <div className={`${styles.mobileMenu} ${menuOpen ? styles.showMenu : ""}`}>
-        <span onClick={() => handleNavClick(refs.homeRef)}>Home</span>
-        <span onClick={() => handleNavClick(refs.experienceRef)}>Experience</span>
-        <span onClick={() => handleNavClick(refs.educationRef)}>Education</span>
-        <span onClick={() => handleNavClick(refs.projectsRef)}>Projects</span>
-        <span onClick={() => handleNavClick(refs.skillsRef)}>Skills</span>
-        <span onClick={() => handleNavClick(refs.contactRef)}>Contact</span>
+        <span onClick={() => handleNavClick(refs.homeRef, "home")}>Home</span>
+        <span onClick={() => handleNavClick(refs.experienceRef, "experience")}>Experience</span>
+        <span onClick={() => handleNavClick(refs.educationRef, "education")}>Education</span>
+        <span onClick={() => handleNavClick(refs.projectsRef, "projects")}>Projects</span>
+        <span onClick={() => handleNavClick(refs.skillsRef, "skills")}>Skills</span>
+        <span onClick={() => handleNavClick(refs.contactRef, "contact")}>Contact</span>
       </div>
     </header>
   );
