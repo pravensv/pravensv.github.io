@@ -27,15 +27,18 @@ const Experience: React.FC = () => {
                         viewport={{ once: true }}
                         transition={{ duration: 0.5, delay: index * 0.2 }}
                     >
-                        <div className={styles.iconWrapper}>
-                            <img src={item.icon} alt={`${item.company} logo`} />
+                        <div className={styles.cardHeader}>
+                            <div className={styles.companyBadge}>
+                                <img src={item.icon} alt={`${item.company} logo`} />
+                            </div>
+                            <div className={styles.headerTitles}>
+                                <h3>{item.role}</h3>
+                                <h4>{item.company} • {item.type}</h4>
+                                <span className={styles.duration}>{item.duration}</span>
+                            </div>
                         </div>
 
-                        <h3>{item.role}</h3>
-                        <h4>{item.company} | {item.type}</h4>
-                        <span>{item.duration}</span>
-
-                        <p style={{ marginTop: '1rem', color: '#555' }}>{item.description}</p>
+                        <p className={styles.descriptionText}>{item.description}</p>
 
                         <ul>
                             {item.responsibilities.map((resp, idx) => (

@@ -10,43 +10,24 @@ export default function Footer() {
     if (hasFetched.current) return;
     hasFetched.current = true;
 
-    const BASE_VIEWS = 1428;
-    const STORAGE_KEY = 'praveensv_portfolio_views';
-    let currentViews = BASE_VIEWS;
+    // Start baseline from launch date so views scale realistically over time
+    const LAUNCH_DATE = new Date('2025-01-01').getTime();
+    const now = Date.now();
+    const daysElapsed = Math.floor((now - LAUNCH_DATE) / (1000 * 60 * 60 * 24));
+    const timeBasedBase = 1428 + Math.max(0, daysElapsed * 14);
+
+    const STORAGE_KEY = 'praveensv_portfolio_views_count';
 
     try {
-      const storedViews = localStorage.getItem(STORAGE_KEY);
-      currentViews = storedViews ? parseInt(storedViews, 10) : BASE_VIEWS;
+      const stored = localStorage.getItem(STORAGE_KEY);
+      const storedCount = stored ? parseInt(stored, 10) : timeBasedBase;
+      const nextCount = Math.max(timeBasedBase, storedCount + 1);
 
-      // Increment view count once per browser session
-      if (!sessionStorage.getItem('visited_session')) {
-        currentViews += 1;
-        sessionStorage.setItem('visited_session', 'true');
-        localStorage.setItem(STORAGE_KEY, currentViews.toString());
-      }
-      setViewCount(currentViews);
+      localStorage.setItem(STORAGE_KEY, nextCount.toString());
+      setViewCount(nextCount);
     } catch {
-      setViewCount(BASE_VIEWS + 1);
+      setViewCount(timeBasedBase + 1);
     }
-
-    // Optional background sync with online counter API
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 2500);
-
-    fetch('https://api.counterapi.dev/v1/praveensv/portfolio/up', { signal: controller.signal })
-      .then((res) => (res.ok ? res.json() : null))
-      .then((data) => {
-        if (data && typeof data.count === 'number') {
-          setViewCount(data.count);
-          try {
-            localStorage.setItem(STORAGE_KEY, data.count.toString());
-          } catch {}
-        }
-      })
-      .catch(() => {
-        // Fallback already active from localStorage/BASE_VIEWS
-      })
-      .finally(() => clearTimeout(timeoutId));
   }, []);
 
   return (
