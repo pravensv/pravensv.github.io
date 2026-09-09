@@ -8,21 +8,21 @@
   },
   {
     "degree": "B.Tech - Computer Science and Engineering",
-    "institution": "Sree Dattha Group of Institutions",
+    "institution": "Jawaharlal Nehru Technological University, Hyderabad",
     "year": "2019",
     "details": "Graduated with strong fundamentals in Programming, OS, DBMS, CN, Java, and Full-Stack projects. Worked on real-time mini projects and coding competitions.",
     "logo": "/icons/jntuh.png"
   },
   {
     "degree": "Intermediate - MPC",
-    "institution": "Geethanjali Junior College, Nalgonda",
+    "institution": "Telangana State Board of Intermediate Education",
     "year": "2015",
     "details": "Secured 85.5% with Mathematics, Physics, and Chemistry. Built strong analytical and problem-solving foundation.",
     "logo": "/icons/Intermeidtae.png"
   },
   {
     "degree": "SSC - High School",
-    "institution": "Z.P.H.S Nemmani",
+    "institution": "Telangana Board of Secondary Education",
     "year": "2013",
     "details": "Completed SSC with 6.7 GPA. Developed basic science and mathematical foundation.",
     "logo": "/icons/Intermeidtae.png"
