@@ -40,7 +40,7 @@ describe('SEO Component', () => {
         await waitFor(() => {
             // Check default title logic
             // In component: title ? `${title} | ...` : siteTitle
-            expect(document.title).toBe('Praveen Voruganti | Java Full Stack Developer');
+            expect(document.title).toBe('Praveen Voruganti | Java Full Stack Developer & Release Automation Engineer');
 
             const metaDescription = document.querySelector('meta[name="description"]');
             expect(metaDescription).toHaveAttribute('content', expect.stringContaining('Portfolio of Praveen Voruganti'));
