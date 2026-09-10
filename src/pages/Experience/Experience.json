@@ -1,16 +1,17 @@
 [
   {
-    "company": "iTalent Digital, Hyderabad",
-    "role": "Java Full Stack Developer Intern",
-    "type": "Internship",
-    "duration": "Nov 2021 - Feb 2022",
-    "icon": "/icons/italent.png",
-    "description": "Completed a hands-on internship focused on building and enhancing full-stack applications using Java, Spring Boot, and React.",
+    "company": "Lloyds Banking Group",
+    "role": "Java Full Stack Developer",
+    "type": "Full-Time",
+    "duration": "July 2025 - Present",
+    "icon": "/icons/lloyds.png",
+    "description": "Responsible for leading development of secure and high-performance banking applications while improving system reliability.",
     "responsibilities": [
-      "Assisted in developing scalable web applications using Java, Spring Boot, and React.js.",
-      "Supported REST API integration and basic database operations.",
-      "Collaborated with senior developers to fix bugs and implement new features.",
-      "Gained exposure to version control workflows using Git."
+      "Leading full-stack development initiatives for banking and financial applications.",
+      "Optimizing backend performance, improving API reliability, and reducing latency.",
+      "Managing cloud deployment workflows and infrastructure optimizations.",
+      "Mentoring junior developers and conducting thorough code reviews.",
+      "Collaborating with stakeholders to refine requirements and deliver scalable solutions."
     ]
   },
   {
@@ -29,18 +30,17 @@
     ]
   },
   {
-    "company": "Lloyds Banking Group",
-    "role": "Java Full Stack Developer",
-    "type": "Full-Time",
-    "duration": "July 2025 - Present",
-    "icon": "/icons/lloyds.png",
-    "description": "Responsible for leading development of secure and high-performance banking applications while improving system reliability.",
+    "company": "iTalent Digital, Hyderabad",
+    "role": "Java Full Stack Developer Intern",
+    "type": "Internship",
+    "duration": "Nov 2021 - Feb 2022",
+    "icon": "/icons/italent.png",
+    "description": "Completed a hands-on internship focused on building and enhancing full-stack applications using Java, Spring Boot, and React.",
     "responsibilities": [
-      "Leading full-stack development initiatives for banking and financial applications.",
-      "Optimizing backend performance, improving API reliability, and reducing latency.",
-      "Managing cloud deployment workflows and infrastructure optimizations.",
-      "Mentoring junior developers and conducting thorough code reviews.",
-      "Collaborating with stakeholders to refine requirements and deliver scalable solutions."
+      "Assisted in developing scalable web applications using Java, Spring Boot, and React.js.",
+      "Supported REST API integration and basic database operations.",
+      "Collaborated with senior developers to fix bugs and implement new features.",
+      "Gained exposure to version control workflows using Git."
     ]
   }
 ]
