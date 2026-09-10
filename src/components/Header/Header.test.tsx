@@ -78,5 +78,25 @@ describe('Header Component', () => {
             });
         }
     });
+
+    it('toggles between dark and light themes', () => {
+        render(
+            <MemoryRouter>
+                <Header scrollToSection={mockScrollToSection} refs={mockRefs} />
+            </MemoryRouter>
+        );
+
+        const toggleBtn = screen.getAllByLabelText(/Switch to light mode/i)[0];
+        expect(toggleBtn).toBeInTheDocument();
+
+        fireEvent.click(toggleBtn);
+        expect(document.documentElement.getAttribute('data-theme')).toBe('light');
+
+        const toggleBtnDark = screen.getAllByLabelText(/Switch to dark mode/i)[0];
+        expect(toggleBtnDark).toBeInTheDocument();
+
+        fireEvent.click(toggleBtnDark);
+        expect(document.documentElement.getAttribute('data-theme')).toBe('dark');
+    });
 });
 

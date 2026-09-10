@@ -19,13 +19,13 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 900px;
-  background: rgba(12, 12, 16, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  max-width: 920px;
+  background: var(--header-bg);
+  border: 1px solid var(--header-border);
   backdrop-filter: blur(20px);
   padding: 6px 14px;
   border-radius: 999px;
-  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55), 0 0 25px rgba(255, 122, 0, 0.1);
+  box-shadow: 0 14px 40px var(--shadow-color), 0 0 25px rgba(255, 122, 0, 0.1);
   transition: all 0.3s ease;
 }
 
@@ -37,7 +37,7 @@
   gap: 0.3rem;
 
   span {
-    color: #cbd5e1;
+    color: var(--header-text);
     font-size: 0.88rem;
     font-weight: 600;
     padding: 0.48rem 1.05rem;
@@ -47,10 +47,47 @@
     white-space: nowrap;
 
     &:hover {
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.08);
+      color: var(--header-text-hover);
+      background: var(--pill-hover-bg);
     }
   }
+}
+
+/* Theme Toggle Button (Desktop & Mobile) */
+.themeToggleBtn,
+.themeToggleBtnMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--pill-hover-bg);
+  border: 1px solid var(--header-border);
+  color: var(--header-text-hover);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+  margin-left: 0.4rem;
+
+  &:hover {
+    transform: scale(1.1) rotate(15deg);
+    background: rgba(255, 122, 0, 0.15);
+    border-color: rgba(255, 122, 0, 0.4);
+    color: #ff7a00;
+  }
+}
+
+.themeIcon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Mobile Controls Group */
+.mobileRightControls {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
 }
 
 /* Active Nav Pill Button */
@@ -69,7 +106,7 @@
   font-size: 1.18rem;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #ffffff;
+  color: var(--text-main);
   cursor: pointer;
   padding: 0 0.8rem;
   white-space: nowrap;
@@ -104,8 +141,8 @@
   width: 38px;
   height: 38px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: var(--pill-hover-bg);
+  border: 1px solid var(--header-border);
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
@@ -115,7 +152,7 @@
   .barOpen {
     width: 18px;
     height: 2px;
-    background: #fff;
+    background: var(--text-main);
     transition: 0.3s ease;
     border-radius: 999px;
     display: block;
@@ -142,7 +179,7 @@
   transform: translateX(-50%) translateY(-120%);
   width: 90%;
   max-width: 400px;
-  background: rgba(12, 12, 16, 0.96);
+  background: var(--mobile-menu-bg);
   backdrop-filter: blur(20px);
   padding: 1.2rem;
   display: flex;
@@ -153,8 +190,8 @@
   pointer-events: none;
   transition: 0.35s ease;
   border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--header-border);
+  box-shadow: 0 15px 35px var(--shadow-color);
   z-index: 99;
 }
 
@@ -165,7 +202,7 @@
 }
 
 .mobileMenu span {
-  color: #cbd5e1;
+  color: var(--header-text);
   font-size: 0.96rem;
   font-weight: 600;
   text-decoration: none;
@@ -192,6 +229,10 @@
   .navGroupLeft,
   .navGroupRight {
     display: none;
+  }
+
+  .mobileRightControls {
+    display: flex;
   }
 
   .menuIcon {

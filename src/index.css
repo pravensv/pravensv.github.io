@@ -11,6 +11,64 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --bg-color: #0b0f19;
+  --bg-gradient: radial-gradient(ellipse at top, #0f172a 0%, #0b0f19 100%);
+  --bg-card: rgba(18, 18, 22, 0.75);
+  --bg-card-hover: rgba(28, 28, 36, 0.85);
+  --text-main: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --border-hover: rgba(255, 122, 0, 0.35);
+  --header-bg: rgba(12, 12, 16, 0.92);
+  --header-border: rgba(255, 255, 255, 0.12);
+  --header-text: #cbd5e1;
+  --header-text-hover: #ffffff;
+  --pill-hover-bg: rgba(255, 255, 255, 0.08);
+  --mobile-menu-bg: rgba(12, 12, 16, 0.96);
+  --section-title-start: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.4);
+  --card-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  --badge-bg: rgba(18, 18, 22, 0.85);
+  --tag-bg: rgba(255, 255, 255, 0.05);
+  --tag-border: rgba(255, 255, 255, 0.12);
+  --scrollbar-track: #0b0f19;
+  --scrollbar-thumb: rgba(255, 255, 255, 0.14);
+  --input-bg: rgba(30, 41, 59, 0.6);
+  --input-text: #f8fafc;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  color: #0f172a;
+  background-color: #f8fafc;
+
+  --bg-color: #f8fafc;
+  --bg-gradient: radial-gradient(ellipse at top, #ffffff 0%, #f1f5f9 100%);
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: #ffffff;
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.1);
+  --border-hover: rgba(255, 122, 0, 0.45);
+  --header-bg: rgba(255, 255, 255, 0.92);
+  --header-border: rgba(0, 0, 0, 0.12);
+  --header-text: #475569;
+  --header-text-hover: #0f172a;
+  --pill-hover-bg: rgba(0, 0, 0, 0.06);
+  --mobile-menu-bg: rgba(255, 255, 255, 0.97);
+  --section-title-start: #0f172a;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+  --badge-bg: rgba(255, 255, 255, 0.92);
+  --tag-bg: rgba(0, 0, 0, 0.05);
+  --tag-border: rgba(0, 0, 0, 0.1);
+  --scrollbar-track: #f1f5f9;
+  --scrollbar-thumb: rgba(0, 0, 0, 0.2);
+  --input-bg: rgba(241, 245, 249, 0.9);
+  --input-text: #0f172a;
 }
 
 /* Reset default margins/paddings and prevent overflow */
@@ -23,8 +81,10 @@
 html, body {
   width: 100%;
   overflow-x: hidden;
-  background-color: #0b0f19;
+  background-color: var(--bg-color);
+  color: var(--text-main);
   scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -61,14 +121,14 @@ img, .sectionWrapper, .projectCard, .socialCard {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0b0f19;
+  background: var(--scrollbar-track);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--scrollbar-thumb);
   border-radius: 999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(56, 189, 248, 0.4);
+  background: rgba(255, 122, 0, 0.5);
 }

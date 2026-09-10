@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import type { RefObject } from "react";
 import styles from "./Header.module.scss";
@@ -20,8 +20,21 @@ type HeaderProps = {
 export default function Header({ scrollToSection, refs }: HeaderProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const [theme, setTheme] = useState<"dark" | "light">(() => {
+    return (localStorage.getItem("portfolio-theme") as "dark" | "light") || "dark";
+  });
+
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("portfolio-theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+  };
 
   const handleToggle = () => {
     setMenuOpen(!menuOpen);
@@ -95,13 +108,66 @@ export default function Header({ scrollToSection, refs }: HeaderProps) {
           >
             Contact
           </span>
+
+          {/* Theme Toggle Button Desktop */}
+          <button
+            className={styles.themeToggleBtn}
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            {theme === "dark" ? (
+              <svg className={styles.themeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2"></path>
+                <path d="M12 20v2"></path>
+                <path d="m4.93 4.93 1.41 1.41"></path>
+                <path d="m17.66 17.66 1.41 1.41"></path>
+                <path d="M2 12h2"></path>
+                <path d="M22 12h-2"></path>
+                <path d="m6.34 17.66-1.41 1.41"></path>
+                <path d="m19.07 4.93-1.41 1.41"></path>
+              </svg>
+            ) : (
+              <svg className={styles.themeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+              </svg>
+            )}
+          </button>
         </div>
 
-        {/* Mobile Hamburger Icon */}
-        <div className={styles.menuIcon} onClick={handleToggle}>
-          <span className={menuOpen ? styles.barOpen : styles.bar}></span>
-          <span className={menuOpen ? styles.barOpen : styles.bar}></span>
-          <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+        {/* Mobile Right Controls (Theme Toggle + Hamburger) */}
+        <div className={styles.mobileRightControls}>
+          <button
+            className={styles.themeToggleBtnMobile}
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+          >
+            {theme === "dark" ? (
+              <svg className={styles.themeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="4"></circle>
+                <path d="M12 2v2"></path>
+                <path d="M12 20v2"></path>
+                <path d="m4.93 4.93 1.41 1.41"></path>
+                <path d="m17.66 17.66 1.41 1.41"></path>
+                <path d="M2 12h2"></path>
+                <path d="M22 12h-2"></path>
+                <path d="m6.34 17.66-1.41 1.41"></path>
+                <path d="m19.07 4.93-1.41 1.41"></path>
+              </svg>
+            ) : (
+              <svg className={styles.themeIcon} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+              </svg>
+            )}
+          </button>
+
+          <div className={styles.menuIcon} onClick={handleToggle}>
+            <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+            <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+            <span className={menuOpen ? styles.barOpen : styles.bar}></span>
+          </div>
         </div>
       </div>
 

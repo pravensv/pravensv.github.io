@@ -7,7 +7,7 @@
   font-size: clamp(2rem, 3.5vw, 2.7rem);
   margin-bottom: 2.5rem;
   font-weight: 800;
-  background: linear-gradient(135deg, #ffffff 0%, #ff7a00 100%);
+  background: linear-gradient(135deg, var(--section-title-start) 0%, #ff7a00 100%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -59,12 +59,12 @@
   }
 
   .nodeContent {
-    background: rgba(18, 18, 22, 0.75);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     backdrop-filter: blur(16px);
     padding: 1.6rem 1.8rem;
     border-radius: 1.25rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--card-shadow);
     width: 45%;
     transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
     text-align: left;
@@ -87,7 +87,7 @@
       margin: 0.35rem 0;
       font-size: 1.05rem;
       font-weight: 600;
-      color: #f8fafc;
+      color: var(--text-main);
     }
 
     span {
@@ -101,7 +101,7 @@
     p {
       margin-top: 0.65rem;
       font-size: 0.96rem;
-      color: #cbd5e1;
+      color: var(--text-secondary);
       line-height: 1.65;
     }
   }
