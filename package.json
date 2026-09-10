@@ -5,8 +5,9 @@
   "type": "module",
   "homepage": "https://pravensv.github.io/",
   "scripts": {
+    "copy-hi": "python3 scripts/make_transparent.py /Users/praveenvoruganti/.gemini/antigravity-ide/brain/47a5409e-b968-4d81-abfc-37a47ed78720/praveen_hi_cutout_1789012233669.jpg public/praveen_hi.png",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run copy-hi && tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest",

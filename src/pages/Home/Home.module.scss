@@ -285,3 +285,106 @@
     background-color: transparent;
   }
 }
+
+/* Greeting Speech Bubble Overlay */
+.greetingBubble {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.3rem;
+  background: rgba(18, 18, 24, 0.95);
+  border: 1.5px solid #ff7a00;
+  border-radius: 1.25rem;
+  box-shadow: 0 12px 30px rgba(255, 122, 0, 0.35), 0 0 20px rgba(255, 122, 0, 0.2);
+  backdrop-filter: blur(16px);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+[data-theme="light"] .greetingBubble {
+  background: rgba(255, 255, 255, 0.96);
+  border-color: #ff7a00;
+  box-shadow: 0 12px 30px rgba(255, 122, 0, 0.25);
+}
+
+.waveHand {
+  font-size: 1.6rem;
+  display: inline-block;
+  transform-origin: 70% 70%;
+}
+
+.bubbleText {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.bubbleHi {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #ff7a00;
+  line-height: 1.2;
+}
+
+.bubbleWelcome {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.bubbleTail {
+  position: absolute;
+  bottom: -9px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid #ff7a00;
+}
+
+/* Say Hi Trigger Badge Button */
+.sayHiBtn {
+  position: absolute;
+  top: -12px;
+  right: 15px;
+  z-index: 15;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px var(--shadow-color);
+  backdrop-filter: blur(12px);
+  transition: all 0.25s ease;
+
+  span {
+    font-size: 1rem;
+  }
+
+  &:hover {
+    border-color: #ff7a00;
+    color: #ff7a00;
+    background: rgba(255, 122, 0, 0.12);
+  }
+}
+
+.glowActive {
+  background: radial-gradient(circle, rgba(255, 122, 0, 0.35) 0%, rgba(255, 122, 0, 0.08) 60%, transparent 80%) !important;
+  filter: blur(30px) !important;
+}
+
+.portraitGreeting {
+  filter: drop-shadow(0 20px 35px var(--shadow-color)) drop-shadow(0 0 35px rgba(255, 122, 0, 0.35)) !important;
+}

@@ -12,6 +12,7 @@ vi.mock('framer-motion', () => ({
             };
         }
     }),
+    AnimatePresence: ({ children }: any) => <>{children}</>,
 }));
 
 describe('Home Page', () => {
